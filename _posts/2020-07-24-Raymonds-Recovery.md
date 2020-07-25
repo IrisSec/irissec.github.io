@@ -4,6 +4,8 @@ title:       "Raymonds Recovery [forensics]"
 description: "solved by skat"
 ---
 
+## Writeup by not_really
+
 This one is easy. To extract the file system, you can use 7-zip on windows or
 
 `mkdir raymonds_fs_out; sudo mount -o loop raymonds_fs raymonds_fs_out` on linux.

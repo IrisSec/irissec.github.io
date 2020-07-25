@@ -4,6 +4,8 @@ title:       "Tom Nook Has Stonks [warmup]"
 description: "solved by not_really"
 ---
 
+## Writeup by not_really
+
 Just do the code but in reverse.
 
 ```python

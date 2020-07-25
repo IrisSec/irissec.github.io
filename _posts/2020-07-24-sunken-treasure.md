@@ -4,6 +4,8 @@ title:       "sunken treasure [misc]"
 description: "solved by not_really, cold_synyster"
 ---
 
+## Writeup by not_really
+
 Since the hint we were given was Uber, I expected that we would plot coordinates on an image and get the flag. I didn't recognize the format though. It just looked like random strings of hex.
 
 ```

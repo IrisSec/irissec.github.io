@@ -4,6 +4,8 @@ title:       "CalATMity [rev]"
 description: "solved by [no one]"
 ---
 
+## Writeup by not_really
+
 I realized there was still a rev problem 30 min before the competition ended and didn't finish before the end. Well, there was no way I was finishing it under 30 minutes. I still solved it though because I was curious after the competition ended.
 
 First off, this program's in rust which means Ghidra isn't gonna be able to do jack.

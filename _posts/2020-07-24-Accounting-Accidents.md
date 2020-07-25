@@ -8,6 +8,8 @@ description: "solved by not_really, sadboiben"
 
 {% raw %}
 
+## Writeup by not_reallly
+
 The first thing I always do is connect to the netcat without even looking at the file so I can get an idea of how the program looks.
 
 ```

@@ -4,6 +4,8 @@ title:       "isabelles_file_encryption [crypto]"
 description: "solved by not_really"
 ---
 
+## Writeup by not_really
+
 I'm bad at crypto but a lot of people had solved this problem, which means I could too, right?
 
 Let's look at what we have.
