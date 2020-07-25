@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link type="text/css" rel="stylesheet" href="{{ site.url }}/assets/css/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+    </head>
+    <body>
+{% include header.html %}
+        <div class="title center_margin">
+            <div class="title_content">
+                <p class="title_item">{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</p>
+                <p class="title_item">{% if page.description %}{{ page.description }}{% endif %}</p>
+            </div>
+        </div>
+        <div class="main_content center_margin">
+			<div class="main_content_item">
+{{ content }}
+			</div>
+        </div>
+    </body>
+</html>
+
