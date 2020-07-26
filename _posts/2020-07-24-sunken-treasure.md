@@ -6,6 +6,12 @@ description: "solved by not_really, cold_synyster"
 
 ## Writeup by not_really
 
+> We think Blathers might be looking for treasure in the Pacific Ocean not too far from an island. The only data we were able to find about his travel were these logs we pulled from his Uber app. Maybe you can make some sense of them?
+>
+> Note: the flag format is slightly different in this challenge.
+>
+> Files: [log.gz](/img/uiuctf2020/log.gz)
+
 Since the hint we were given was Uber, I expected that we would plot coordinates on an image and get the flag. I didn't recognize the format though. It just looked like random strings of hex.
 
 ```

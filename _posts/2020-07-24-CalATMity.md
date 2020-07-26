@@ -6,6 +6,14 @@ description: "solved by [no one]"
 
 ## Writeup by not_really
 
+> Uh  oh! The circuitry on the Nook stop got a little messed up and it's not letting you withdraw your bells! How will you pay off your loan now?
+>
+> `nc chal.uiuc.tf 2005`
+>
+> Author: Eric
+>
+> Files: [calatmity](/img/uiuctf2020/calatmity)
+
 I realized there was still a rev problem 30 min before the competition ended and didn't finish before the end. Well, there was no way I was finishing it under 30 minutes. I still solved it though because I was curious after the competition ended.
 
 First off, this program's in rust which means Ghidra isn't gonna be able to do jack.
@@ -355,7 +363,7 @@ for bit in results:
 print(out) # 7879797576737871
 ```
 
-Weird, it's hex for xyyuvsxq. :woman_shrugging:
+Weird, it's hex for xyyuvsxq. 🤷
 
 Anyway, let's put it into the nc.
 

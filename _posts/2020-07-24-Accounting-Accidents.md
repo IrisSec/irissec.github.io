@@ -10,6 +10,12 @@ description: "solved by not_really, sadboiben"
 
 ## Writeup by not_really
 
+> Isabelle is working on billing sheets for the end of the month, and she needs to move things into her Accounting Very Large accounting system. Can you help her finish her billing?!
+>
+> `nc chal.uiuc.tf 2001`
+>
+> Files: [accounting](/img/uiuctf2020/accounting)
+
 The first thing I always do is connect to the netcat without even looking at the file so I can get an idea of how the program looks.
 
 ```

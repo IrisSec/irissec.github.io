@@ -6,6 +6,12 @@ description: "solved by not_really"
 
 ## Writeup by not_really
 
+> Isabelle wanted to password-protect her files, but there wasn't any room in the budget for BitLocker! So she made her own program. But now she lost her password and can't decrypt one of her super important files! Can you help her out?
+>
+> Author: potatoboy69
+>
+> Files: [blackmail_encrypted](/img/uiuctf2020/blackmail_encrypted) [super_secret_encryption.py](/img/uiuctf2020/super_secret_encryption.py)
+
 I'm bad at crypto but a lot of people had solved this problem, which means I could too, right?
 
 Let's look at what we have.

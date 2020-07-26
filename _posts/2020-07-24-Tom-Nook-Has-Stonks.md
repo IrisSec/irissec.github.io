@@ -6,6 +6,10 @@ description: "solved by not_really"
 
 ## Writeup by not_really
 
+> Tom nook is really really rich for a capitalist racoon warlord. But just how rich... is he (vsauce music begins).
+>
+> Files: [bells.py](/img/uiuctf2020/bells.py)
+
 Just do the code but in reverse.
 
 ```python
