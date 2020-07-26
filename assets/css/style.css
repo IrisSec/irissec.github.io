@@ -3,13 +3,13 @@ pre{overflow-x: auto}
 img{max-width:100%}
 code{background-color:#111}
 blockquote{border-left:5px solid #eee;padding-left:5px}
-.center_margin {margin-left:20%;margin-right:20%;}
+.center_margin {margin-left:20%;margin-right:20%}
 @media (max-width: 960px) {
     .center_margin {margin-left:0%;margin-right:0%}
 }
 .header{display:flex;align-items:center;position:fixed;background-color:rgba(0,0,0,.4);width:100%;z-index:1}
 .logo{max-height:80px}
-.header_content{font-size:20px}
+.header_content{font-size:20px;padding-left:15px}
 .header_item{padding-left:15px;padding-right:15px;vertical-align:middle;text-decoration:none}
 .title{padding-top:80px}
 .title_content{background-color:#0f0f0f;font-size:30px;text-align:center;height:200px}
