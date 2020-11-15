@@ -11,7 +11,6 @@ html {
 	overflow-y: scroll;
 	/*for firefox and friends*/
 	scrollbar-color: #003b00 #000b00;
-	scrollbar-width: thin;
 }
 
 body {
