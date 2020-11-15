@@ -1,5 +1,5 @@
 permalink: /articles/categories/:categories/:year/:month/:day/:title
-paginate: 4
+paginate: 10
 paginate_path: /articles/page:num/
 
 highlighter: rogue
