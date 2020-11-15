@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+	{% include header.html %}
+
+	<div id="main">
+
+		{{ content }}
+
+		<h2>Articles</h2>
+
+		{% for post in site.posts %}
+
+			{% if post.categories contains page.category %}
+
+				<h3 style="margin-bottom: 0;"><a id="listingurl" href="{{ post.url }}">{{ post.title }}</a></h3>
+				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">{{ post.date | date: "%Y-%m-%d" }}</h5>
+				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by {{ post.author }}</h2>
+
+			{% endif %}
+
+		{% endfor %}
+
+	</div>
+
+</body>
+
+</html>

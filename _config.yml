@@ -1,25 +1,22 @@
-name: "IrisSec"
+permalink: /articles/categories/:categories/:year/:month/:day/:title
+paginate: 4
+paginate_path: /articles/page:num/
 
-url: '' 
-baseurl: ''
-
+highlighter: rogue
 markdown: kramdown
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-highlighter: rouge
 
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  auto_ids: true
+  syntax_highlighter: rogue
+
+collections:
+  members:
+    output: true
+    permalink: /:collection/:name
+  categories:
+    output: true
+    permalink: /articles/:collection/:name
 
 plugins:
   - jekyll-paginate
-paginate: 10
-paginate_path: /page-:num
-
-source: .
-destination: ./_site
-
-sass:
-    style: :compressed
-    sass_dir: assets/css/
-

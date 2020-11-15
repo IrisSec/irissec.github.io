@@ -1,4 +1,31 @@
----
-layout: default
----
-{{ content }}
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+	{% include header.html %}
+
+	<div id="main">
+
+
+		<h1 style="margin-bottom: 0;">{{ page.title }}</h1>
+
+		{% for category in page.categories %}
+
+			<h5 style="margin-bottom: 0; display: inline-block; padding-right: 8px"><a href="/articles">articles</a>/<a href="/articles/categories/{{ category }}">{{ category }}</a></h5>
+
+		{% endfor %}
+
+		<br>
+		<h5 style="margin-top: 0; margin-bottom: 0;">{{ page.date | date: "%Y-%m-%d" }}</h5>
+		<h5 style="margin-top: 0;">by {{ page.author }}</h2>
+
+		{{ content }}
+
+	</div>
+
+</body>
+
+</html>

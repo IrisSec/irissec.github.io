@@ -11,6 +11,10 @@
 
 		{{ content }}
 
+		{% for member in site.members %}
+			<h2><a id="listingurl" href="{{ member.url }}">{{ member.name }}</a></h2>
+		{% endfor %}
+
 	</div>
 
 </body>
