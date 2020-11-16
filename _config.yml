@@ -2,7 +2,7 @@ permalink: /articles/categories/:categories/:year/:month/:day/:title
 paginate: 10
 paginate_path: /articles/page:num/
 
-highlighter: rogue
+highlighter: rouge
 markdown: kramdown
 
 kramdown:
