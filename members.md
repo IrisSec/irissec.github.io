@@ -5,4 +5,6 @@ layout: members
 
 # Members
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia augue vel arcu scelerisque consequat. Mauris in felis ante. Integer lectus odio, fringilla sagittis imperdiet nec, iaculis nec massa. Proin sollicitudin ex eu ligula imperdiet iaculis eget ut risus. In pretium tortor eros, a sodales neque iaculis eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque venenatis tristique sapien, scelerisque eleifend odio fringilla vitae. Duis quis sapien rhoncus, consequat purus in, bibendum dolor. Nam nec ex feugiat lectus commodo varius dapibus et nunc. Sed ullamcorper nulla ac dui molestie, a efficitur risus dignissim. Nullam id rhoncus diam. Donec non mollis arcu.
+At the heart of IrisSec are our members. While IrisSec initially started as a group of only four people, today it has grown much larger and has members from all across North America with each our own with diverse and unique backgrounds.
+
+You can learn about some of our members who have chosen to create a profile here:

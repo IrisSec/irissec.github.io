@@ -5,6 +5,17 @@ layout: default
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia augue vel arcu scelerisque consequat. Mauris in felis ante. Integer lectus odio, fringilla sagittis imperdiet nec, iaculis nec massa. Proin sollicitudin ex eu ligula imperdiet iaculis eget ut risus. In pretium tortor eros, a sodales neque iaculis eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque venenatis tristique sapien, scelerisque eleifend odio fringilla vitae. Duis quis sapien rhoncus, consequat purus in, bibendum dolor. Nam nec ex feugiat lectus commodo varius dapibus et nunc. Sed ullamcorper nulla ac dui molestie, a efficitur risus dignissim. Nullam id rhoncus diam. Donec non mollis arcu.
+The IrisSec Computer Hacking Club was founded in the November of 2018 as a place for hackers of all ages, skill levels, and backgrounds to collaborate, learn, and grow. IrisSec is based in North America and is not tied to any single school, college, or institution, and is instead independently run and organized.
 
-Proin at ex et sem gravida vehicula sodales vitae purus. Nullam viverra mi lectus, id dictum ligula dapibus eleifend. Sed tortor nulla, varius vitae justo et, vehicula convallis nunc. Nam in diam scelerisque, scelerisque libero vel, iaculis purus. Aenean sed arcu ac nunc hendrerit molestie quis sed elit. Nulla convallis tortor quam, vitae accumsan lorem scelerisque a. Curabitur ultricies quam nec lobortis tristique. Aenean luctus tristique metus, ac maximus dui porta vitae. Proin vehicula metus vestibulum odio condimentum, at porttitor diam bibendum. Nam tellus neque, imperdiet in mi quis, lacinia euismod ligula. Nullam non varius eros. Donec in massa mi. Integer mattis dolor vel leo ullamcorper condimentum. Fusce quis nisi ex.
+IrisSec promotes a casual, anti-competitive, and fun-first environment for hackers. We believe in voluntary commitment and participation. Many of us are college students or IT and cybersecurity professionals so we know what it's like to have more important things to worry about. Every now and then, we step out of the shadows and get teams together for competitions and projects.
+
+## Highlights
+
+### National Cyber League, Fall 2020
+1/957
+
+### UIUCTF 2020
+7/387
+
+### National Cyber League, Spring 2020
+15/925
