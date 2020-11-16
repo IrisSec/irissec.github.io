@@ -26,6 +26,13 @@ layout: articles
 {% for post in paginator.posts %}
 
 	<h3 style="margin-bottom: 0;"><a id="listingurl" href="{{ post.url }}">{{ post.title }}</a></h3>
+
+	{% for category in post.categories %}
+
+		<h5 style="margin-top: 0; margin-bottom: 0; display: inline-block; padding-left: 8px"><a href="/articles">articles</a>/<a href="/articles/categories/{{ category }}">{{ category }}</a></h5>
+
+	{% endfor %}
+
 	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">{{ post.date | date: "%Y-%m-%d" }}</h5>
 	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by <a href="/members/{{ post.author }}">{{ post.author }}</a></h2>
 
