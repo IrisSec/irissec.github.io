@@ -1,6 +1,7 @@
 ---
 title: Shawn Kathleen "skat" Duong
-layout: default
+author: skat
+layout: profile
 ---
 
 # Shawn Kathleen "skat" Duong

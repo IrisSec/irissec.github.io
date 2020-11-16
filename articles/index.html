@@ -32,4 +32,4 @@ layout: articles
 {% endfor %}
 
 <br>
-<a id="listingurl" href="{{paginator.previous_page_path | relative_url }}">&lt;&lt;</a><span style="padding-left: 8px; padding-right: 8px;">{{ paginator.page }}/{{ paginator.total_pages }}</span><a id="listingurl" href="{{ paginator.next_page_path | relative_url }}">&gt;&gt;</a>
+<a id="listingurl" href="{{ paginator.previous_page_path | relative_url }}">&lt;&lt;</a><span style="padding-left: 8px; padding-right: 8px;">{{ paginator.page }}/{{ paginator.total_pages }}</span><a id="listingurl" href="{{ paginator.next_page_path | relative_url }}">&gt;&gt;</a>

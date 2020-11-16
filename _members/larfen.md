@@ -1,6 +1,7 @@
 ---
 title: Jonathan "larfen" Thai
-layout: default
+author: larfen
+layout: profile
 ---
 
 # Jonathan "larfen" Thai
