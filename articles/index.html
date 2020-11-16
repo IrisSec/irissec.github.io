@@ -9,11 +9,17 @@ layout: articles
 
 <h2>Sort by Category</h2>
 
-{% for category in site.categories %}
+<div style="text-align: left">
 
-	<h3><a id="listingurl" href="{{ category.url }}">{{ category.title }}</a></h3>
+	{% for category in site.categories %}
 
-{% endfor %}
+		<h3 style="display: inline-block; margin-top: 0; margin-bottom: 0;">
+			<a id="listingurl" href="{{ category.url }}">{{ category.title }}</a>
+		</h3>
+
+	{% endfor %}
+
+</div>
 
 <h2>Latest Articles</h2>
 
@@ -21,7 +27,7 @@ layout: articles
 
 	<h3 style="margin-bottom: 0;"><a id="listingurl" href="{{ post.url }}">{{ post.title }}</a></h3>
 	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">{{ post.date | date: "%Y-%m-%d" }}</h5>
-	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by {{ post.author }}</h2>
+	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by <a href="/members/{{ post.author }}">{{ post.author }}</a></h2>
 
 {% endfor %}
 
