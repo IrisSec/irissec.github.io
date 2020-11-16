@@ -5,6 +5,7 @@
 
 :root {
 	--bg-color-primary: #000b00;
+	--bg-color-secondary: #002300;
 	--fg-color-primary: #009927;
 	--fg-color-secondary: #003b00;
 	--fg-color-bold: #00ff41;
@@ -70,6 +71,13 @@ body h1, body h2, body h3 {
 
 body h1::before {
 	content: "> "
+}
+
+blockquote {
+	background-color: var(--bg-color-secondary);
+	border-left: 4px solid var(--fg-color-bold);
+	margin: 2% 2%;
+	padding: 2px 20px 2px 20px;
 }
 
 img {

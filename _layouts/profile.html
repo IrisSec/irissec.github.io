@@ -23,7 +23,7 @@
 
 				<h3 style="margin-bottom: 0;"><a id="listingurl" href="{{ post.url }}">{{ post.title }}</a></h3>
 				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">{{ post.date | date: "%Y-%m-%d" }}</h5>
-				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by {{ post.author }}</h2>
+				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by <a href="/members/{{ post.author }}">{{ post.author }}</a></h2>
 
 			{% endif %}
 
