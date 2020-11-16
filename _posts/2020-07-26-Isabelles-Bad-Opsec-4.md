@@ -19,31 +19,31 @@ We're not given much more to go off of here except for the fact that it's somewh
 
 Looking at the YouTube channel, we notice something strange. Can you see it?
 
-![](/img/uiuctf2020/img14.png)
+![](/uploads/2020-07-26/img14.png)
 
 The channel banner image is very oddly cropped, to say the least. Something interesting about YouTube (and many sites, actually) is that it serves a different version of a webpage depending on your user agent. If you're on a smartphone, then the dimensions of the smartphone are taken into account and you're served a website tailored to your smaller screen. On a standard laptop monitor like mine, I'm served a version of the website tailored to my screen size. In each of these differently-tailored versions of the same website, images can likewise be cropped.
 
 Would it be possible to retrieve the full image somehow? Simply inspecting the element using the Chrome and opening up the URL to the image just brings us to the post-cropped version.
 
-![](/img/uiuctf2020/img17.jpg)
+![](/uploads/2020-07-26/img17.jpg)
 
 Upon looking at the source code of the page and looking for banners, we notice that YouTube does indeed serve different banners based on whether you're on mobile, a desktop, or a television. We can see the URL to the banner that they serve to televisions after a closer look.
 
-![](/img/uiuctf2020/img18.png)
+![](/uploads/2020-07-26/img18.png)
 
 Going there brings us to the flag!
 
-![](/img/uiuctf2020/img19.jpg)
+![](/uploads/2020-07-26/img19.jpg)
 
 I again must admit that this was difficult and a real step away from the obvious due to how incredibly subtle it is. What I was actually initially trying to do was use the account's Google Plus ID, a hidden artifact of a long-dead legacy in YouTube, to track Isabelle's activity across the internet, such as seeing her Google Maps reviews for instance.
 
 You can see her Google ID here, hidden away in the source code and forgotten to be scrubbed by YouTube developers for years, still leaving a legacy in the source code:
 
-![](/img/uiuctf2020/img20.png)
+![](/uploads/2020-07-26/img20.png)
 
 Using the Google Plus ID, `100881987903947537523`, we can track the account's activity across different Google platforms such as Maps reviews. Isabelle's can be found at [google.com/maps/contrib/100881987903947537523/reviews/](https://www.google.com/maps/contrib/100881987903947537523/reviews/). 
 
-![](/img/uiuctf2020/img21.png)
+![](/uploads/2020-07-26/img21.png)
 
 Once again, this wasn't the solution. This was just something that I tried and discovered about Google platforms, and possibly something that I'll be incorporating into real-life OSINT engagements in the future. Imagine going to someone's YouTube channel, getting their Google Plus ID, and then getting their approximate location based on their Google Maps reviews! This might make for an interesting future challenge if any potential CTF organizers are reading this (*hint hint, nudge nudge*).
 

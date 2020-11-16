@@ -13,7 +13,7 @@ layout: post
 
 Having solved this challenge was really significant to me as someone who's never considered mathematics to be a personal strength. I have a massive appreciation for mathematics, yes, but it's not particularly a *passion* of mine as it is a passion for others. Solving this cryptography challenge helped alleviate some of the impostor syndrome I experience as someone who is usually the youngest and least experienced guy in any math class or environment at my university.
 
-I've included the challenge's attached source code in case you'd like to attempt it for yourself. You can find it here: [coelacanth\_vault.py](/img/uiuctf2020/coelacanth_vault.py) (SHA1: 335c2bf1c838f90d07f8de8e61a420ebb51de4a1)
+I've included the challenge's attached source code in case you'd like to attempt it for yourself. You can find it here: [coelacanth\_vault.py](/uploads/2020-07-26/coelacanth_vault.py)
 
 A few days after the end of the competition, I emailed my friend Kevin Dao, a mathematics undergraduate at the University of California, San Diego, about this challenge and how I solved it. A (revised) excerpt of my email to him is included below:
 
@@ -35,7 +35,7 @@ An excerpt of his response is included below:
 
 Fascinating! I admit that I was surprised by the depth associated with the Chinese remainder theorem as I thought it was just a clever "math hack" similar to how Japanese multiplication is a clever "math hack."
 
-If you'd like to read Dao's exposition or Conrad's paper, you can see them here: [Dao](/img/uiuctf2020/CRT-KevinDao.pdf), [Conrad](/img/uiuctf2020/CRT-KeithConrad.pdf). Credits to Kevin Dao, undergraduate at the University of California, San Diego, and Keith Conrad, a professor at the University of Connecticut, respectively. Keep in mind that Kevin wrote this in a single morning after having received my email. Mathematicians amaze me.
+If you'd like to read Dao's exposition or Conrad's paper, you can see them here: [Dao](/uploads/2020-07-26/CRT-KevinDao.pdf), [Conrad](/uploads/2020-07-26/CRT-KeithConrad.pdf). Credits to Kevin Dao, undergraduate at the University of California, San Diego, and Keith Conrad, a professor at the University of Connecticut, respectively. Keep in mind that Kevin wrote this in a single morning after having received my email. Mathematicians amaze me.
 
 Feel free to give either or both papers a read. For the purposes of this writeup, I'm going to be giving an ELI5 explanation and massively oversimplifying.
 

@@ -15,19 +15,19 @@ layout: post
 
 Looks like we need to find Isabelle's YouTube channel now. The challenge description mentions that she was trying to make a custom YouTube API, which was something that we actually saw in the last challenge as another repository on Isabelle's GitHub account. Let's go ahead and see what that repository has to offer.
 
-![](/img/uiuctf2020/img12.png)
+![](/uploads/2020-07-26/img12.png)
 
 Having a look through the commit log and seeing the most recent commit brings us to this:
 
-![](/img/uiuctf2020/img13.png)
+![](/uploads/2020-07-26/img13.png)
 
 It looks like we've found a channel ID that was deleted in a commit. On YouTube, channel URLs are in the format `www.youtube.com/channel/<ID>`, so let's so ahead and see if that channel exists. Upon visiting the expected channel URL, we can see that the channel does indeed exist.
 
-![](/img/uiuctf2020/img14.png)
+![](/uploads/2020-07-26/img14.png)
 
 After exploring her channel for a little bit, we see some outgoing links to her Twitter and website.
 
-![](/img/uiuctf2020/img15.png)
+![](/uploads/2020-07-26/img15.png)
 
 Clicking on the link to her website brings us to the following: `https://uiuc.tf/?flag=uiuctf%7Bl3g3nd_oF_zeld@_m0re_like_l3gend_0f_l1nk!%7D`
 

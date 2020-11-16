@@ -44,13 +44,13 @@ Now we know that her username is *like* "IsabelleHacker," and so we can deduce s
 
 After querying Twitter for users with usernames similar to this, we stumble upon a positive result from "HackerIsabelle."
 
-![](/img/uiuctf2020/img00.png)
+![](/uploads/2020-07-26/img00.png)
 
 Looks like we've found her! Let's do some digging into her account to see if anything interesting or valuable to us pops up. Something interesting about Twitter is that replies are automatically hidden from the primary profile page, and you actually have to go into "Tweets \& replies" in order to see replies *in addition* to regular tweets.
 
 After some scrolling, we stumble upon the flag in a tweet.
 
-![](/img/uiuctf2020/img01.png)
+![](/uploads/2020-07-26/img01.png)
 
 Now that we've found the flag, let's shift focus from the competition's environment to the real-world environment. **How can this be applied in real life?**
 

@@ -11,7 +11,7 @@ layout: post
 >
 > Author: Eric
 >
-> Files: [calatmity](/img/uiuctf2020/calatmity)
+> Files: [calatmity](/uploads/2020-07-24/calatmity)
 
 I realized there was still a rev problem 30 min before the competition ended and didn't finish before the end. Well, there was no way I was finishing it under 30 minutes. I still solved it though because I was curious after the competition ended.
 
@@ -19,13 +19,13 @@ First off, this program's in rust which means Ghidra isn't gonna be able to do j
 
 While I was waiting for it to decompile anyway, I was looking at the `Decompiling` loading bar at the bottom right and saw these pickle functions being decompiled:
 
-![image-20200723201109206](/img/uiuctf2020/image-20200723201109206.png)
+![image-20200723201109206](/uploads/2020-07-24/image-20200723201109206.png)
 
 Along with "Deserializer", it made me think it was python's pickle format, the binary format for storing python objects. Sure enough, a search gave me https://github.com/birkenfeld/serde-pickle. Weird that we have python serialization in a rust project.
 
 I wanted to see if I could find the function referencing the "Thanks for using the Nook stop!" string so I tried searching for the string. Turns out it's a non-terminated string, and Ghidra doesn't know any better. However, as I was looking through the top of the string, I found this base64:
 
-![image-20200723201538940](/img/uiuctf2020/image-20200723201538940.png)
+![image-20200723201538940](/uploads/2020-07-24/image-20200723201538940.png)
 
 Okay, let's unencrypt it. (I copied the base64 out with a hex editor)
 
@@ -234,7 +234,7 @@ If you treat each gate as a function, I'm essentially inlining all of the functi
 
 So if we run that, we get this huge block of code:
 
-![image-20200723205303461](/img/uiuctf2020/image-20200723205303461.png)
+![image-20200723205303461](/uploads/2020-07-24/image-20200723205303461.png)
 
 Then all we have to do is wrap it in the z3 boilerplate code I pasted earlier.
 
@@ -376,8 +376,8 @@ Imho, the point value of this (350) and cricket32 (500) should have been swapped
 
 By the way, you might be interested in seeing what this circuit would look like "physically". Well, I have it for you. The whole circuit generated in a circuit emulator and the result is 1 when we plug in the binary from earlier.
 
-![image-20200724125345810](/img/uiuctf2020/image-20200724125345810.png)
+![image-20200724125345810](/uploads/2020-07-24/image-20200724125345810.png)
 
-Code is [here](/img/uiuctf2020/genlogisimcirc.py.html) but the simulator is on wpf so don't expect to be able to run on linux.
+Code is [here](/uploads/2020-07-24/genlogisimcirc.py.html) but the simulator is on wpf so don't expect to be able to run on linux.
 
-Graph in its full glory (without the binary set) is [here](/img/uiuctf2020/circuit.jpg).
+Graph in its full glory (without the binary set) is [here](/uploads/2020-07-24/circuit.jpg).

@@ -17,7 +17,7 @@ Now that we've found Isabelle's YouTube channel, it looks like we need to find a
 
 Something I noticed about this level is that the captions were absent for the last second of the video. Immediately, this becomes a source of suspicion. For this level, I have to credit my teammate [[nope]] for discovering the hidden data inside of one of the caption files.
 
-![](/img/uiuctf2020/img16.png)
+![](/uploads/2020-07-26/img16.png)
 
 I must admit that without my teammate [[nope]], I would not have gotten this. I was actually trying to perform all sorts of steganography on the video to see if there might have been something hidden in the video or audio streams.
 

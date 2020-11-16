@@ -9,7 +9,7 @@ layout: post
 >
 > Author: potatoboy69
 >
-> Files: [blackmail_encrypted](/img/uiuctf2020/blackmail_encrypted) [super_secret_encryption.py](/img/uiuctf2020/super_secret_encryption.py)
+> Files: [blackmail_encrypted](/uploads/2020-07-24/blackmail_encrypted) [super_secret_encryption.py](/uploads/2020-07-24/super_secret_encryption.py)
 
 I'm bad at crypto but a lot of people had solved this problem, which means I could too, right?
 
@@ -106,13 +106,13 @@ Wrong.
 
 Let's see what the output is:
 
-![image-20200722135126088](/img/uiuctf2020/image-20200722135126088.png)
+![image-20200722135126088](/uploads/2020-07-24/image-20200722135126088.png)
 
 Oof, it didn't find anything. Is it because it just doesn't work at all? To test, I encoded my own message with password `HAhAMemE`:
 
 > This is the story of a man named "Potato". Potato worked for a company in a big building where he was Employee #777. Employee #777's job was simple: he sat at his desk in Room 777 and he drew potatoes with his mouse. Orders came to him through a monitor on his desk telling him what potatoes to send, how big they needed to be, and in what order. This is what Employee #777 did every day of every month of every year, and although others may have considered it soul rending, Potato relished every moment that the orders came in, as though he had been made exactly for this job. And Potato was happy. And then one day, something very peculiar happened. Something that would forever change Potato; Something he would never quite forget. He had been at his desk for nearly an hour when he had realized not one single order had arrived on the monitor for him to follow. No one had shown up to give him instructions, call a meeting, or even say 'kawaii'. Never in all his years at the company had this happened, this complete isolation. Something was very clearly wrong. Shocked, frozen solid, Potato found himself unable to move for the longest time. But as he came to his wits and regained his senses, he got up from his desk and stepped out of his office. Btw, Isabelle did not write this message.
 
-![image-20200722135758771](/img/uiuctf2020/image-20200722135758771.png)
+![image-20200722135758771](/uploads/2020-07-24/image-20200722135758771.png)
 
 Interestingly enough, we actually get the message this time. Turns out the original message has binary in it, but the script only prints messages if they are _all_ text.
 
@@ -124,7 +124,7 @@ if "uiuctf{" in decrypted_text:
 
 We got it!
 
-![image-20200722140009928](/img/uiuctf2020/image-20200722140009928.png)
+![image-20200722140009928](/uploads/2020-07-24/image-20200722140009928.png)
 
 You're probably interested in what that image is though? Well, that image doesn't open, and there's tons of `EF BF BD` in the image. It's possible that the file never got correctly encoded and so we'll probably never see it.
 

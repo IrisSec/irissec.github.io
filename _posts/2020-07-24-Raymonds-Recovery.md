@@ -9,7 +9,7 @@ layout: post
 >
 > Here, take this ext4 filesystem and see what you can find. If you can figure out which file it is and how to fix it, you’ll get something in return!
 >
-> Files: [raymonds_fs](/img/uiuctf2020/raymonds_fs)
+> Files: [raymonds_fs](/uploads/2020-07-24/raymonds_fs)
 
 This one is easy. To extract the file system, you can use 7-zip on windows or
 
@@ -101,16 +101,16 @@ very_important_records
 
 Aha, we see IHDR, but it doesn't have the PNG magic. Let's see what the image looks like right now.
 
-![image-20200721204648751](/img/uiuctf2020/image-20200721204648751.png)
+![image-20200721204648751](/uploads/2020-07-24/image-20200721204648751.png)
 
 And then we can open any other png we have lying around to see what it looks like.
 
-![image-20200721204823436](/img/uiuctf2020/image-20200721204823436.png)
+![image-20200721204823436](/uploads/2020-07-24/image-20200721204823436.png)
 
 Aha, this image has eight extra bytes that my_fav_art doesn't have. Let's copy them and put them into my_fav_art.
 
-![image-20200721204731703](/img/uiuctf2020/image-20200721204731703.png)
+![image-20200721204731703](/uploads/2020-07-24/image-20200721204731703.png)
 
 After renaming it to .png we get this.
 
-![image-20200721205012522](/img/uiuctf2020/image-20200721205012522.png)
+![image-20200721205012522](/uploads/2020-07-24/image-20200721205012522.png)

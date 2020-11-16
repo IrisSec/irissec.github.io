@@ -9,7 +9,7 @@ layout: post
 >
 > Note: the flag format is slightly different in this challenge.
 >
-> Files: [log.gz](/img/uiuctf2020/log.gz)
+> Files: [log.gz](/uploads/2020-07-24/log.gz)
 
 Since the hint we were given was Uber, I expected that we would plot coordinates on an image and get the flag. I didn't recognize the format though. It just looked like random strings of hex.
 
@@ -81,4 +81,4 @@ plt.show()
 
 It'll take a little while for all the `h3ToGeo`s to execute, but eventually you should get something like this:
 
-![image-20200722153503677](/img/uiuctf2020/image-20200722153503677.png)
+![image-20200722153503677](/uploads/2020-07-24/image-20200722153503677.png)

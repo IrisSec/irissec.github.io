@@ -13,7 +13,7 @@ layout: post
 >
 > `nc chal.uiuc.tf 2001`
 >
-> Files: [accounting](/img/uiuctf2020/accounting)
+> Files: [accounting](/uploads/2020-07-24/accounting)
 
 The first thing I always do is connect to the netcat without even looking at the file so I can get an idea of how the program looks.
 
@@ -71,7 +71,7 @@ We get 5 bits of input here, one for a name and four for different costs. Someho
 
 So here's what we get in Ghidra:
 
-![javaw_nK5KMYGQsI](/img/uiuctf2020/javaw_nK5KMYGQsI.png)
+![javaw_nK5KMYGQsI](/uploads/2020-07-24/javaw_nK5KMYGQsI.png)
 
 Good, we get debug data. Looking at the green names here, we can see functions like rotate, newNode, etc. Having seen the trailer and seeing the [avl tree visualization](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html) site there, I felt like this was an avl tree problem. Okay, let's actually look at main now.
 
@@ -212,11 +212,11 @@ void fancy_print(char *param_1) {
 
 Seems pretty simple enough. We just need to change 30000 to 0. This one is so easy we can manually hex patch this one. There's also Ghidra's Ctrl+Shift+G patch instruction command as well.
 
-![javaw_PIrVbEykGT](/img/uiuctf2020/javaw_PIrVbEykGT.png)
+![javaw_PIrVbEykGT](/uploads/2020-07-24/javaw_PIrVbEykGT.png)
 
 The base is probably 0x08048000 so the actual file position of this would be 0x098f. Let's go check.
 
-![HxD_o2VMB099qa](/img/uiuctf2020/HxD_o2VMB099qa.png)
+![HxD_o2VMB099qa](/uploads/2020-07-24/HxD_o2VMB099qa.png)
 
 Looks like we found it. We'll change the 3075 bytes to 0000.
 
@@ -224,11 +224,11 @@ Now let's open in IDA so we can see what this looks like in memory. I'll use the
 
 First, let's set a breakpoint after eax sets var_134 and on this call eax instruction, right before we call the printEdges function which we discovered earlier.
 
-![VirtualBoxVM_dKKX2ka5WP](/img/uiuctf2020/VirtualBoxVM_dKKX2ka5WP.png)
+![VirtualBoxVM_dKKX2ka5WP](/uploads/2020-07-24/VirtualBoxVM_dKKX2ka5WP.png)
 
 So what's at var_134? We know it's a reference to the tree, so it's most likely the root node. Take a look at the address eax points to.
 
-![VirtualBoxVM_cPWTRlbdIO](/img/uiuctf2020/VirtualBoxVM_cPWTRlbdIO.png)
+![VirtualBoxVM_cPWTRlbdIO](/uploads/2020-07-24/VirtualBoxVM_cPWTRlbdIO.png)
 
 Now we can see some of the items in the tree. And Apples seems to be the first one.
 
@@ -243,27 +243,27 @@ uVar1 = insert(uVar1, 50, "ATM Repairs");
 local_13c = insert(uVar1,25,0);
 ```
 
-![firefox_aV8aPoPm20](/img/uiuctf2020/firefox_aV8aPoPm20.png)
+![firefox_aV8aPoPm20](/uploads/2020-07-24/firefox_aV8aPoPm20.png)
 
 Okay, looks fine. Now let's add those `1 2 3 4` numbers we input in when asked.
 
-![firefox_6TlVKlbREp](/img/uiuctf2020/firefox_6TlVKlbREp.png)
+![firefox_6TlVKlbREp](/uploads/2020-07-24/firefox_6TlVKlbREp.png)
 
 Aha! Look at what node's at the root now. It's 10. And 10 is also Apples. So we're definitely on the right track, we need to figure out how to get our node to the root.
 
-![firefox_aV8aPoPm20](/img/uiuctf2020/firefox_aV8aPoPm20.png)
+![firefox_aV8aPoPm20](/uploads/2020-07-24/firefox_aV8aPoPm20.png)
 
 So first we need to get 25 where the 20 is. To upset the balance, we need to make 25's side weigh more than 10.
 
-![firefox_vtA1N4RgqV](/img/uiuctf2020/firefox_vtA1N4RgqV.png)
+![firefox_vtA1N4RgqV](/uploads/2020-07-24/firefox_vtA1N4RgqV.png)
 
 Now we add 27 and this unbalances the tree, moving 25 in 20's place.
 
-![firefox_9nugIxITaS](/img/uiuctf2020/firefox_9nugIxITaS.png)
+![firefox_9nugIxITaS](/uploads/2020-07-24/firefox_9nugIxITaS.png)
 
 Then we can add something to the left of 10 to unbalance the root and move 25 in it's place.
 
-![firefox_unvYja25mm](/img/uiuctf2020/firefox_unvYja25mm.png)
+![firefox_unvYja25mm](/uploads/2020-07-24/firefox_unvYja25mm.png)
 
 There we go! We now have 25 at the root. So whenever we get asked about prices, we now need to type `24 26 27 5`.
 

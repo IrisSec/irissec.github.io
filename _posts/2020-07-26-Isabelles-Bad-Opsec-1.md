@@ -15,43 +15,43 @@ layout: post
 
 We are now told that Isabelle has left some code up on a repository that is publicly accessible. Because we were able to get our foot in the door by finding her Twitter in the previous challenge, we can deduce from another tweet that she has a GitHub account. For the uninitiated, GitHub is one such website hosting git repositories for code. The information from this tweet is consistent with the information from the challenge description suggesting she has a code repository somewhere:
 
-![](/img/uiuctf2020/img02.png)
+![](/uploads/2020-07-26/img02.png)
 
 The next step is to find out where her GitHub is. A quick search of "HackerIsabelle" returns no positive results. We can again use her tweets to deduce some facts about her.
 
 Clue #1: her Twitter bio referencing "0x15ABE11E."
 
-![](/img/uiuctf2020/img03.png)
+![](/uploads/2020-07-26/img03.png)
 
 Clue #2: a tweet referencing "0x15ABE11E."
 
-![](/img/uiuctf2020/img04.png)
+![](/uploads/2020-07-26/img04.png)
 
 Clue #3: a tweet again referencing "0x15ABE11E."
 
-![](/img/uiuctf2020/img05.png)
+![](/uploads/2020-07-26/img05.png)
 
 From clues #1-3, we can deduce that "0x15ABE11E" may be a possible alias and possibly a username that she might use, or if not then at least another string she might mention elsewhere.
 
 Clue #4: a reference to "mimidogz" and an error.
 
-![](/img/uiuctf2020/img06.png)
+![](/uploads/2020-07-26/img06.png)
 
 There are a few more references to mimidogz, but this is perhaps the most significant one as the error referenced suggests that mimidogz is a program. We can deduce that this may be the name of a project that Isabelle is working on.
 
 Clue #5: a tweet referencing "IsabelleOnSecurity."
 
-![](/img/uiuctf2020/img07.png)
+![](/uploads/2020-07-26/img07.png)
 
 From this clue, we can deduce that "IsabelleOnSecurity" is a possible username.
 
 From these three sets of clues, we can query GitHub for any one of "0x15ABE11E," "mimidogz," or "IsabelleOnSecurity" to reach her GitHub profile.
 
-![](/img/uiuctf2020/img08.png)
+![](/uploads/2020-07-26/img08.png)
 
 Looking into "mimidogz," we arrive at a code repository.
 
-![](/img/uiuctf2020/img09.png)
+![](/uploads/2020-07-26/img09.png)
 
 Looking into the `dogz.py` program, we find an interesting chunk of code from lines 40-41.
 
@@ -62,11 +62,11 @@ Looking into the `dogz.py` program, we find an interesting chunk of code from li
 
 This base64 string just decodes to "spaghetti," but could it have been something else in a previous version of this project? When we check the blame for this file, we can see that the driver code was not always that string.
 
-![](/img/uiuctf2020/img10.png)
+![](/uploads/2020-07-26/img10.png)
 
 Checking out that specific commit allows us to see the changes made.
 
-![](/img/uiuctf2020/img11.png)
+![](/uploads/2020-07-26/img11.png)
 
 A quick base64 decoding of the string from the older version gives us the flag.
 
