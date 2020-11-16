@@ -80,6 +80,12 @@ blockquote {
 	padding: 2px 20px 2px 20px;
 }
 
+code {
+	background-color: var(--fg-color-primary);
+	color: var(--bg-color-primary);
+	padding: 0px 2px 0px 2px;
+}
+
 img {
 	display: block;
 	margin: auto;
