@@ -1,10 +1,9 @@
 ---
+title: Starter OSINT
+author: skat
+categories: osint
 layout: post
-title: "Starter OSINT [OSINT]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Our friend isabelle has recently gotten into cybersecurity, she made a point of it by rampantly tweeting about it. Maybe you can find some useful information ;).
 > 

@@ -1,10 +1,9 @@
 ---
+title: Isabelle's Bad OPSEC 5
+author: skat
+categories: osint
 layout: post
-title: "Isabelle's Bad Opsec 5 [OSINT]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Isabelle had one more secret on her youtube account, but it was embarrassing.
 > 

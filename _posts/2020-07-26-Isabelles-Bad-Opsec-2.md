@@ -1,10 +1,9 @@
 ---
+title: Isabelle's Bad OPSEC 2
+author: skat
+categories: osint
 layout: post
-title: "Isabelle's Bad Opsec 2 [OSINT]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Wow holy heck Isabelle's OPSEC is really bad. She was trying to make a custom youtube api but it didnt work. Can you find her channel??
 > 

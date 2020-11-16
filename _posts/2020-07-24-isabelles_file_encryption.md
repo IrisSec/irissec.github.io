@@ -1,10 +1,9 @@
 ---
-layout:      post
-title:       "isabelles_file_encryption [crypto]"
-description: "solved by not_really"
+title: isabelles_file_encryption
+author: not_really
+categories: crypto
+layout: post
 ---
-
-## Writeup by not_really
 
 > Isabelle wanted to password-protect her files, but there wasn't any room in the budget for BitLocker! So she made her own program. But now she lost her password and can't decrypt one of her super important files! Can you help her out?
 >

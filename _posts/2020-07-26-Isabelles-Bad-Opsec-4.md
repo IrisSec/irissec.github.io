@@ -1,10 +1,9 @@
 ---
+title: Isabelle's Bad OPSEC 4
+author: skat
+categories: osint
 layout: post
-title: "Isabelle's Bad Opsec 4 [OSINT]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Isabelle hid one more secret somewhere on her youtube channel! Can you find it!?
 > 

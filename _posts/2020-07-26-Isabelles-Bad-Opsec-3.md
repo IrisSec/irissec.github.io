@@ -1,10 +1,9 @@
 ---
+title: Isabelle's Bad OPSEC 3
+author: skat
+categories: osint
 layout: post
-title: "Isabelle's Bad Opsec 3 [OSINT]"
-description: "solved by skat, not_really"
 ---
-
-### Writeup by skat
 
 > Isabelle has a youtube video somewhere, something is hidden in it.
 > 

@@ -1,10 +1,9 @@
 ---
+title: coelacanth_vault
+author: skat
+categories: crypto
 layout: post
-title: "coelacanth_vault [crypto]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Why would you waste your time catching more than one coelacanth?
 > 

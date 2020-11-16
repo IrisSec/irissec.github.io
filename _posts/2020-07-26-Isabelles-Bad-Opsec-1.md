@@ -1,10 +1,9 @@
 ---
+title: Isabelle's Bad OPSEC 1
+author: skat
+categories: osint
 layout: post
-title: "Isabelle's Bad Opsec 1 [OSINT]"
-description: "solved by skat"
 ---
-
-### Writeup by skat
 
 > Isabelle has some really bad opsec! She left some code up on a repo that definitely shouldnt be public. Find the naughty code and claim your prize.
 > 

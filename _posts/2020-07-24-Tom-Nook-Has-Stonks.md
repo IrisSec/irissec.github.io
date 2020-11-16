@@ -1,10 +1,9 @@
 ---
-layout:      post
-title:       "Tom Nook Has Stonks [warmup]"
-description: "solved by not_really"
+title: Tom Nook Has Stonks
+author: not_really
+categories: [crypto, re]
+layout: post
 ---
-
-## Writeup by not_really
 
 > Tom nook is really really rich for a capitalist racoon warlord. But just how rich... is he (vsauce music begins).
 >

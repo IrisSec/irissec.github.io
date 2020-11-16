@@ -1,10 +1,9 @@
 ---
-layout:      post
-title:       "CalATMity [rev]"
-description: "solved by [no one]"
+title: CalATMity
+author: not_really
+categories: re
+layout: post
 ---
-
-## Writeup by not_really
 
 > Uh  oh! The circuitry on the Nook stop got a little messed up and it's not letting you withdraw your bells! How will you pay off your loan now?
 >

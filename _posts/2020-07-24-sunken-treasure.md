@@ -1,10 +1,9 @@
 ---
-layout:      post
-title:       "sunken treasure [misc]"
-description: "solved by not_really, cold_synyster"
+title: sunken treasure
+author: not_really
+categories: other
+layout: post
 ---
-
-## Writeup by not_really
 
 > We think Blathers might be looking for treasure in the Pacific Ocean not too far from an island. The only data we were able to find about his travel were these logs we pulled from his Uber app. Maybe you can make some sense of them?
 >

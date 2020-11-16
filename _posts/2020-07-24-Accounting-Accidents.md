@@ -1,14 +1,13 @@
 ---
-layout:      post
-title:       "Accounting Accidents [rev]"
-description: "solved by not_really, sadboiben"
+title: Accounting Accidents
+author: not_really
+categories: re
+layout: post
 ---
 
 [//]: <> "This is here because jekyll is stupid"
 
 {% raw %}
-
-## Writeup by not_really
 
 > Isabelle is working on billing sheets for the end of the month, and she needs to move things into her Accounting Very Large accounting system. Can you help her finish her billing?!
 >

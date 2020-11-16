@@ -1,10 +1,9 @@
 ---
-layout:      post
-title:       "Raymonds Recovery [forensics]"
-description: "solved by skat"
+title: Raymonds Recovery
+author: not_really
+categories: forensics
+layout: post
 ---
-
-## Writeup by not_really
 
 > Uh-oh! Someone corrupted all my important files and now I can’t open any of them. I really need one of them in particular, a png of something very important. Please help me recover it!
 >
