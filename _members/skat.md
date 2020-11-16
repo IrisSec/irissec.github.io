@@ -13,12 +13,12 @@ I've been programming ever since I was a young child, and I've been hacking ever
 
 My specific specializations are digital forensics, open source intelligence, and network security. My favorite programming languages are Python and C. I'm a proud full-time Linux user and a supporter of all things free/libre and open-source.
 
-Links:
+## Links
 
 Twitter: [@shawndxyz](https://twitter.com/shawndxyz) \\
 Website: [shawnd.xyz](http://shawnd.xyz/)
 
-Contact:
+## Contact
 
 Shawn Kathleen "skat" Duong (He/Him/His) \\
 Administrator \\
