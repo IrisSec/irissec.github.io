@@ -18,9 +18,8 @@
 			{% if post.categories contains page.category %}
 
 				<h3 style="margin-bottom: 0;"><a id="listingurl" href="{{ post.url }}">{{ post.title }}</a></h3>
-				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">{{ post.date | date: "%Y-%m-%d" }}</h5>
-				<h5 style="margin-top: 0; margin-bottom: 0; padding-left: 8px;">by {{ post.author }}</h2>
-
+				{% include postmeta.html categories=post.categories date=post.date author=post.author push=true %}
+				
 			{% endif %}
 
 		{% endfor %}
