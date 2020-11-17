@@ -17,4 +17,17 @@
 {% endfor %}
 
 <h5 style="margin-top: 0; margin-bottom: 0; padding-left: {{ lpad }}px;">{{ include.date | date: "%Y-%m-%d" }}</h5>
-<h5 style="margin-top: 0; margin-bottom: 0; padding-left: {{ lpad }}px;">by <a href="/members/{{ include.author }}">{{ include.author }}</a></h2>
+
+{% assign authorExists = false %}
+{% for member in site.members %}
+	{% if member.author == include.author %}
+		{% assign authorExists = true %}
+		{% break %}
+	{% endif %}
+{% endfor %}
+
+{% if authorExists == true %}
+	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: {{ lpad }}px;">by <a href="/members/{{ include.author }}">{{ include.author }}</a></h2>
+{% else %}
+	<h5 style="margin-top: 0; margin-bottom: 0; padding-left: {{ lpad }}px;">by {{ include.author }}</a></h2>
+{% endif %}
