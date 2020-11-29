@@ -16,6 +16,7 @@ My specific specializations are digital forensics, open source intelligence, and
 
 ## Links
 
+GitHub : [shawnduong](https://github.com/shawnduong) \\
 Twitter: [@shawndxyz](https://twitter.com/shawndxyz) \\
 Website: [shawnd.xyz](http://shawnd.xyz/)
 
