@@ -10,13 +10,14 @@
 	--fg-color-secondary: #003b00;
 	--fg-color-bold: #00ff41;
 	--fx-color-primary: #4c754c;
+	--page-animation: flicker 0.15s infinite;
 }
 
 html {
 	background-color: var(--bg-color-primary);
 	overflow-y: scroll;
 	/*for firefox and friends*/
-	scrollbar-color: #003b00 #000b00;
+	scrollbar-color: var(--fg-color-primary) var(--bg-color-primary);
 }
 
 body {
@@ -35,7 +36,8 @@ body::before {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+	/* 49% instead of 50% fixes visual bug on firefox/hardware accel */
+	background: linear-gradient(rgba(18, 16, 16, 0) 49%, rgba(0, 0, 0, 0.25) 49%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 	z-index: 2;
 	background-size: 100% 3px, 2px 100%;
 	pointer-events: none;
@@ -53,7 +55,12 @@ body::after {
 	opacity: 0;
 	z-index: 2;
 	pointer-events: none;
-	animation: flicker 0.15s infinite;
+	animation: var(--page-animation);
+}
+
+#main > p > img {
+	animation: none !important;
+	opacity: 1 !important;
 }
 
 body::-webkit-scrollbar {
