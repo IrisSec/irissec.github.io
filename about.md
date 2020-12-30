@@ -11,6 +11,9 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### WeCTF 2020
+3/141
+
 ### National Cyber League, Fall 2020
 1/957
 
