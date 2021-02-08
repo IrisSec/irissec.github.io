@@ -195,7 +195,24 @@ function get_code_value(a:int):int {
   var h:int = f + g;
   var i:int = 210;
   h > i;
-  br_table[B_f, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_r, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_c, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_l, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_i, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_g, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_j, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_z, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_h, B_b, B_b, B_b, B_b, B_b, B_y, B_b, B_b, B_b, B_b, B_b, B_m, B_b, B_b, B_b, B_b, B_b, B_x, B_b, B_b, B_b, B_b, B_b, B_k, B_b, B_b, B_b, B_b, B_b, B_w, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_u, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_aa, B_b, B_b, B_b, B_b, B_b, B_q, B_b, B_b, B_b, B_b, B_b, B_t, B_b, B_b, B_b, B_b, B_b, B_o, B_b, B_b, B_b, B_b, B_b, B_p, B_b, B_b, B_b, B_b, B_b, B_v, B_b, B_b, B_b, B_b, B_b, B_e, B_b, B_b, B_b, B_b, B_b, B_d, B_b, B_b, B_b, B_b, B_b, B_n, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_s, ..B_b](
+  br_table[B_f, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_r, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_c, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_l, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_i, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_g, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_j, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_z, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+           B_h, B_b, B_b, B_b, B_b, B_b, B_y, B_b, B_b, B_b, B_b, B_b,
+           B_m, B_b, B_b, B_b, B_b, B_b, B_x, B_b, B_b, B_b, B_b, B_b,
+           B_k, B_b, B_b, B_b, B_b, B_b, B_w, B_b, B_b, B_b, B_b, B_b,
+           B_b, B_b, B_b, B_b, B_b, B_b, B_u, B_b, B_b, B_b, B_b, B_b,
+           B_b, B_b, B_b, B_b, B_b, B_b, B_aa, B_b, B_b, B_b, B_b, B_b,
+           B_q, B_b, B_b, B_b, B_b, B_b, B_t, B_b, B_b, B_b, B_b, B_b,
+           B_o, B_b, B_b, B_b, B_b, B_b, B_p, B_b, B_b, B_b, B_b, B_b,
+           B_v, B_b, B_b, B_b, B_b, B_b, B_e, B_b, B_b, B_b, B_b, B_b,
+           B_d, B_b, B_b, B_b, B_b, B_b, B_n, B_b, B_b, B_b, B_b, B_b,
+           B_b, B_b, B_b, B_b, B_b, B_b, B_s, ..B_b](
     h)   
   label B_aa:
   var j:int = 1;
@@ -375,7 +392,21 @@ var  B_e = 194;
 var  B_d = 212;
 var  B_c = 247;
 var  B_b = 0;
-var br_table = [B_f, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_r, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_c, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_l, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_i, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_g, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_j, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_z, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_h, B_b, B_b, B_b, B_b, B_b, B_y, B_b, B_b, B_b, B_b, B_b, B_m, B_b, B_b, B_b, B_b, B_b, B_x, B_b, B_b, B_b, B_b, B_b, B_k, B_b, B_b, B_b, B_b, B_b, B_w, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_u, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_aa, B_b, B_b, B_b, B_b, B_b, B_q, B_b, B_b, B_b, B_b, B_b, B_t, B_b, B_b, B_b, B_b, B_b, B_o, B_b, B_b, B_b, B_b, B_b, B_p, B_b, B_b, B_b, B_b, B_b, B_v, B_b, B_b, B_b, B_b, B_b, B_e, B_b, B_b, B_b, B_b, B_b, B_d, B_b, B_b, B_b, B_b, B_b, B_n, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_s, B_b];
+var br_table = [B_f, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+B_r, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_c, B_b, B_b,
+B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_l, B_b, B_b, B_b, B_b, B_b,
+B_b, B_b, B_b, B_b, B_b, B_b, B_i, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+B_b, B_b, B_b, B_g, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+B_j, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_z, B_b, B_b,
+B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_h, B_b, B_b, B_b, B_b, B_b,
+B_y, B_b, B_b, B_b, B_b, B_b, B_m, B_b, B_b, B_b, B_b, B_b, B_x, B_b, B_b,
+B_b, B_b, B_b, B_k, B_b, B_b, B_b, B_b, B_b, B_w, B_b, B_b, B_b, B_b, B_b,
+B_b, B_b, B_b, B_b, B_b, B_b, B_u, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+B_b, B_b, B_b, B_aa, B_b, B_b, B_b, B_b, B_b, B_q, B_b, B_b, B_b, B_b, B_b,
+B_t, B_b, B_b, B_b, B_b, B_b, B_o, B_b, B_b, B_b, B_b, B_b, B_p, B_b, B_b,
+B_b, B_b, B_b, B_v, B_b, B_b, B_b, B_b, B_b, B_e, B_b, B_b, B_b, B_b, B_b,
+B_d, B_b, B_b, B_b, B_b, B_b, B_n, B_b, B_b, B_b, B_b, B_b, B_b, B_b, B_b,
+B_b, B_b, B_b, B_s, B_b];
 alert(br_table); //prevent optos in closure
 alert(br_table);
 ```
@@ -483,7 +514,11 @@ s = Solver()
 
 # our possible options
 for i in range(25):
-    s.add(Or(ar[i] == 192, ar[i] == 119, ar[i] == 247, ar[i] == 160, ar[i] == 179, ar[i] == 189, ar[i] == 171, ar[i] == 5, ar[i] == 183, ar[i] == 18, ar[i] == 150, ar[i] == 25, ar[i] == 163, ar[i] == 48, ar[i] == 55, ar[i] == 1, ar[i] == 120, ar[i] == 61, ar[i] == 138, ar[i] == 135, ar[i] == 49, ar[i] == 194, ar[i] == 212, ar[i] == 148, ar[i] == 96))
+    s.add(Or(ar[i] == 192, ar[i] == 119, ar[i] == 247, ar[i] == 160, ar[i] == 179,
+             ar[i] == 189, ar[i] == 171, ar[i] == 5, ar[i] == 183, ar[i] == 18,
+             ar[i] == 150, ar[i] == 25, ar[i] == 163, ar[i] == 48, ar[i] == 55,
+             ar[i] == 1, ar[i] == 120, ar[i] == 61, ar[i] == 138, ar[i] == 135,
+             ar[i] == 49, ar[i] == 194, ar[i] == 212, ar[i] == 148, ar[i] == 96))
 
 # the five tiles already on the board
 s.add(ar[0+0] == 212)
