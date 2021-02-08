@@ -353,7 +353,7 @@ If you look at the spritesheet:
 
 ![app.data](/uploads/2021-02-08/dice-app.data.png)
 
-You can see how the table lines up with the sprite sheet and skips the purple arrows and x/check marks (`B_b`). So it looks like each sprite gets a value represented with it by jumping to a certain place in the code and setting the value to return. Problem is, we don't want to have to do all of this manually, right?
+You can see how the table lines up with the sprite sheet starting with the white hollow triangle. It skips the purple arrows and x/check marks (`B_b`). So it looks like each sprite gets a value represented with it by jumping to a certain place in the code and setting the value to return. Problem is, we don't want to have to do all of this manually, right?
 
 Enter closure compiler. It's not the best method, but it works here. What we can do is convert all of the jumps into variables, move it to above the array, and closure compiler can simplify it.
 
@@ -365,7 +365,7 @@ Here's how to do that.
 
 If you did it right, you get
 
-```
+```js
 var B_aa = 1;
 var  B_z = 5;
 var  B_y = 18;
@@ -484,7 +484,7 @@ function code(a:int, b:int, c:int, d:int, e:int):int {
 }
 ```
 
-`code` takes our five values from earlier. To help us again, we'll make it look like javascript and then give it to closure compiler to simplify. All you need to do here is replace `:int` with nothing and you'll get this:
+`code` takes our five values from earlier. To help us again, we'll make it look like javascript and then give it to closure compiler to simplify. All you need to do here is replace `:int` with nothing and replace `h[11]`-`h[15]` with `a`-`e`. Once you put that through closure, you'll get this:
 
 ```js
 function codef(a, b, c, d, e) {
