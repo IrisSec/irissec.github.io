@@ -1,6 +1,13 @@
+---
+title: dice-is-you
+author: not_really
+categories: re
+layout: post
+---
+
 # dice-is-you
 
-![dice-1](/uploads/2020-02-08/dice-1.png)
+![dice-1](/uploads/2021-02-08/dice-1.png)
 
 _First blood... that was fast_
 
@@ -14,7 +21,7 @@ I talked with a few people in discord who said wasm2c works with ghidra, but I u
 
 The game works just like Baba is You, you use the `IS` blocks to make certain things do certain other things. So in the screenshot above, pushing `THONK` out of the way and replacing it with `DICE` let's "`YOU`" become the dice on the right and get the flag. Sadly the last level is a bit different and doesn't really use these mechanics.
 
-![dice-2](/uploads/2020-02-08/dice-2.png)
+![dice-2](/uploads/2021-02-08/dice-2.png)
 
 It took me a bit to realize, but the examples at the bottom with the two purple arrows show a passing condition and a failing condition. If you put some correct combination of characters together, you can make the arrow and characters light up. We probably need to get all the arrows on the top to light up to make the X turn into a check.
 
@@ -327,7 +334,7 @@ B_s, B_b, ...
 
 If you look at the spritesheet:
 
-![app.data](/uploads/2020-02-08/dice-app.data.png)
+![app.data](/uploads/2021-02-08/dice-app.data.png)
 
 You can see how the table lines up with the sprite sheet and skips the purple arrows and x/check marks (`B_b`). So it looks like each sprite gets a value represented with it by jumping to a certain place in the code and setting the value to return. Problem is, we don't want to have to do all of this manually, right?
 
@@ -548,7 +555,7 @@ N   336
 G   348
 ```
 
-![dice-3](/uploads/2020-02-08/dice-3.png)
+![dice-3](/uploads/2021-02-08/dice-3.png)
 
 I placed these by editing the wat because I was too lazy to move the blocks during testing, that's why there's still blocks on the right.
 
