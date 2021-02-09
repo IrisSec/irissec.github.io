@@ -51,13 +51,9 @@ This acts something like this
 return floor(pixel_value_in_noise_texture(x, y) * Meme)
 ```
 
-By looking at the pixel values in the render, this `Noise Texture` outputs a value from about 0.5-0.8, so you can get values from 333-534 from `MemeGenerator` depending on the pixel.
+By looking at the pixel values in the render, this `Noise Texture` outputs a value from about 0.5-0.8, so you can get values from about 333-534 from `MemeGenerator` depending on the pixel. That's not to say there aren't pixel values of 600 or even 667. It's just that a majority of the pixels are of in this range.
 
 ![proc-10](/uploads/2021-02-09/proc-10.png)
-
-Here's all the pixel values above 500: not many. So there's probably hardly any chance of 600+.
-
-![proc-11](/uploads/2021-02-09/proc-11.png)
 
 So now that we know what kind of values are coming out of `MemeGenerator`, it's time to look at the meat of the "code", `Dice1`-`Dice3` from the "connect the wire" nodes. They're pretty much more of the same of each other, so I'll just show `Dice1`.
 
