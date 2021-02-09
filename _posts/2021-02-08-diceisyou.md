@@ -496,7 +496,7 @@ That's a little better. Somehow, with this function, we need to get the values e
 
 Why try to figure it out when you can just chuck it into z3.
 
-Here's the conditions:
+Here's the conditions to get the flag in this game:
 
 ```
 * 25 values
@@ -563,11 +563,11 @@ Output:
 Here's a table to go from sprite id to sprite description:
 
 ```
-/\ 138
+/\  138
 [/] 150
-Z 162
-+ 174
-[] 186
+Z   162
++   174
+[]  186
 +o+ 198
 -o- 210
 R   222
