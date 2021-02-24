@@ -11,6 +11,12 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### UnionCTF 2021
+10/466
+
+### DiceCTF 2021
+10/1059
+
 ### WeCTF 2020
 3/141
 
