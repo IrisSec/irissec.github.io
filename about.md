@@ -11,6 +11,12 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### National Cyber League, Spring 2021
+1/922
+
+### X-MAS GTF 2021
+2/75
+
 ### UnionCTF 2021
 10/466
 
