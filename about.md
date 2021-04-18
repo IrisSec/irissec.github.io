@@ -11,6 +11,9 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### HackPackCTF 2021
+1/477
+
 ### National Cyber League, Spring 2021
 1/922
 
