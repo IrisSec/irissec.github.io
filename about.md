@@ -11,29 +11,29 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
-### HackPackCTF 2021
+### \> HackPackCTF 2021
 1/477
 
-### National Cyber League, Spring 2021
+### \> National Cyber League, Spring 2021
 1/922
 
-### X-MAS GTF 2021
+### \> X-MAS GTF 2021
 2/75
 
-### UnionCTF 2021
+### \> UnionCTF 2021
 10/466
 
-### DiceCTF 2021
+### \> DiceCTF 2021
 10/1059
 
-### WeCTF 2020
+### \> WeCTF 2020
 3/141
 
-### National Cyber League, Fall 2020
+### \> National Cyber League, Fall 2020
 1/957
 
-### UIUCTF 2020
+### \> UIUCTF 2020
 7/387
 
-### National Cyber League, Spring 2020
+### \> National Cyber League, Spring 2020
 15/925
