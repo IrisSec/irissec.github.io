@@ -16,7 +16,7 @@ are C++ and Python.
 If you would like to connect, check out some of the info beneath!
 
 ## Contact/Links
-Gmail: uNUKEcorn15@gmail.com \\
-GitHub : [BuiTheBoi](https://github.com/BuiTheBoi) \\
+Gmail: [uNUKEcorn15@gmail.com](mailto:uNUKEcorn15@gmail.com) \\
+GitHub: [BuiTheBoi](https://github.com/BuiTheBoi) \\
 LinkedIn: [Justin Bui](https://www.linkedin.com/in/justin-bui-4a8926194/) \\
 
