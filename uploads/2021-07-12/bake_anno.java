@@ -285,21 +285,21 @@ public class JavaIsEZ3 {
             }
 
             String walnut = "WalnutGirlBestGirl_07/15";
-			char[] walArr = walnut.toCharArray();
-			char[][] thrArr = new char[][]{walArr, null, null};
-			int inpStrLen = args[0].length() / 2;
+            char[] walArr = walnut.toCharArray();
+            char[][] thrArr = new char[][]{walArr, null, null};
+            int inpStrLen = args[0].length() / 2;
 
-			for (int i = 0; i < 2; i++) {
-				String subStr = args[0].substring(i * inpStrLen, (i + 1) * inpStrLen);
-				thrArr[i+1] = subStr.toCharArray();
-			}
+            for (int i = 0; i < 2; i++) {
+                String subStr = args[0].substring(i * inpStrLen, (i + 1) * inpStrLen);
+                thrArr[i+1] = subStr.toCharArray();
+            }
 
-			kanbaru(thrArr);
-			if (oshino(thrArr) && sengoku(thrArr) && args[0].hashCode() == 1101317042) {
-				System.out.println("Chute.  Now you know my secret");
-			} else {
-				System.out.println("*fanfare* You've been pranked!");
-			}
+            kanbaru(thrArr);
+            if (oshino(thrArr) && sengoku(thrArr) && args[0].hashCode() == 1101317042) {
+                System.out.println("Chute.  Now you know my secret");
+            } else {
+                System.out.println("*fanfare* You've been pranked!");
+            }
         }
 
     }
