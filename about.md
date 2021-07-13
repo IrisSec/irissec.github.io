@@ -11,6 +11,10 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### \> redpwnCTF 2021
+1/136 (College Division) \\
+7/1418 (All)
+
 ### \> HackPackCTF 2021
 1/477
 
