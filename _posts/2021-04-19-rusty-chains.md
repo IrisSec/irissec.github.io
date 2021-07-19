@@ -1,7 +1,7 @@
 ---
 title: HackPack CTF 2021 - rusty chains
 author: sera
-categories: pwn
+categories: binex
 layout: post
 ---
 
