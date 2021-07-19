@@ -91,6 +91,7 @@ $ objdump -d -M intel ./ret2the-unknown | grep "<main>:"
 
 Great! `main` has the address `0x401186`. If we were to overflow the buffer and overwrite the return address with `main`'s address, then the program will repeat itself. With this slight adjustment, our attack plan is complete:
 
+{:start="0"}
 0. Get the offset of a `pop rdi; ret;` gadget in the given static libc file.
 1. Use a buffer overflow to overwrite the return address of `main` with the address of `main`. This will cause the `main` function to repeat itself once more.
 2. The `main` function will give us the address of the loaded `printf` function from libc.
