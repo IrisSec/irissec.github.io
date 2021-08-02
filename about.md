@@ -11,6 +11,9 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### UIUCTF 2021
+1/658
+
 ### \> redpwnCTF 2021
 1/136 (College Division) \\
 7/1418 (All)
@@ -24,13 +27,7 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 ### \> X-MAS GTF 2021
 2/75
 
-### \> UnionCTF 2021
-10/466
-
-### \> DiceCTF 2021
-10/1059
-
-### \> WeCTF 2020
+### \> WeCTF+ 2020
 3/141
 
 ### \> National Cyber League, Fall 2020
@@ -38,6 +35,3 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ### \> UIUCTF 2020
 7/387
-
-### \> National Cyber League, Spring 2020
-15/925
