@@ -300,7 +300,7 @@ I run this and get... a ulimit error from spawning a child. Great. After changin
 `uiuctf{https://youtu.be/17ocaZb-bGg}`
 
 ## Things after solving
-The XSS bug was actually completely unneccessary because wasm does not have the concept of a same origin policy, so we could have send the admin to our server and have that return the script too - here's a sample server that does that:
+The XSS bug was actually completely unneccessary because websockets do not have the concept of a same origin policy, so we could have send the admin to our server and have that return the script too - here's a sample server that does that:
 
 ```python
 from flask import Flask
