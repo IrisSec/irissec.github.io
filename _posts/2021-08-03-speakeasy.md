@@ -1,3 +1,10 @@
+---
+title: UIUCTF 2021 - speakeasy
+author: not_really
+categories: re
+layout: post
+---
+
 > The local speakeasy has a password to get in. Can you guess it?
 >
 > Author: 2much4u

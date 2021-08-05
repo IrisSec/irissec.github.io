@@ -1,3 +1,10 @@
+---
+title: UIUCTF 2021 - smorga's bored
+author: not_really
+categories: re
+layout: post
+---
+
 > smorga was bored and wrote a lil cuda chal 4 
 >
 > HINT: CUDA binary utilities
