@@ -17,7 +17,7 @@ layout: post
 >
 > Files: [smorga.exe](/uploads/2021-08-04/smorga.exe) [cudart64_102.dll](/uploads/2021-08-04/cudart64_102.dll)
 
-I tried running this challenge at the beginning of the ctf, but it turns out it doesn't run unless you have an Nvidia gpu.
+I tried running this challenge at the beginning of the CTF, but it turns out that it doesn't run unless you have an Nvidia GPU.
 
 ```
 >smorga
@@ -30,17 +30,17 @@ Cuda error! CUDA driver version is insufficient for CUDA runtime version
 operable program or batch file.
 ```
 
-And even when one teammate with an Nvidia gpu tried running it, it still failed.
+Even when one teammate with an Nvidia GPU tried running it, it still failed.
 
-At this point, the cuobjdump hint was not there, and I moved onto different challenges. In the last hour of the ctf, I found another teammate who was able to run it. I was hoping it was something like a simple xor that I could guess, but sadly one character change would affect the rest of the encrypted string. So I downloaded the nvidia tools and disassembled the program.
+At this point, the cuobjdump hint was not there, and I moved onto different challenges. In the last hour of the CTF, I found another teammate who was able to run it. I was hoping that it was something like a simple XOR that I could guess, but sadly one character change would affect the rest of the encrypted string, so I downloaded the Nvidia tools and disassembled the program.
 
 ![smorgas-1](/uploads/2021-08-04/smorgas-1.png)
 
-<center style="font-size:12px;">Debugging over discord is always fun</center>
+<center style="font-size:12px;">Debugging over Discord is always fun</center>
 
-## The program
+## The Program
 
-There's not much on the c side of things. `FUN_140001058` runs the string encrypting code on the cuda side and compares it to a string.
+There's not much on the C side of things. `FUN_140001058` runs the string encrypting code on the CUDA side and compares it to a string.
 
 ```c
 bool FUN_14000115c(char* param_1) {
@@ -81,7 +81,7 @@ void main(void) {
 }
 ```
 
-## The function
+## The Function
 
 After dumping the code with cuobjdump, we get a long function. Nvidia has decent docs [here](https://docs.nvidia.com/cuda/parallel-thread-execution/index.html) for the assembly.
 
@@ -103,7 +103,7 @@ ld.param.u32 %r61, [_Z6encodePci_param_1];   //r61 = param1
 cvta.to.global.u64 %rd10, %rd4;              //rd10 = cvtToGlobal(rd4)
 ```
 
-The first bit seems to read from param0 and 1. `cvta.to.global.u64` is used on param0, which according to the docs "converts address to global space". This just seems to be general purpose memory. param0 is the input and param1 is 127 (see the `FUN_14000115c` call.)
+The first bit seems to read from param0 and 1. `cvta.to.global.u64` is used on param0, which according to the docs, "converts address to global space." This just seems to be general purpose memory. param0 is the input and param1 is 127 (see the `FUN_14000115c` call).
 
 ```assembly
 mov.u32 %r159, 0;                //r159 = 0
@@ -127,7 +127,7 @@ mov.u32 %r161, 0;       //r161 = 0
 mov.u32 %r160, 42;      //r160 = 42
 ```
 
-r3 is set to `tid.x` which according to the documentation is the thread id. Looks like it runs multiple threads. r4 is set to `param1-1`, and r161 and r160 are set to 0 and 42 respectively.
+r3 is set to `tid.x` which according to the documentation is the thread ID. It looks like it runs multiple threads. r4 is set to `param1-1`, and r161 and r160 are set to 0 and 42, respectively.
 
 ```assembly
 BB0_3:
@@ -162,7 +162,7 @@ setp.ne.s32     %p10, %r161, 64; //p10 = (r161 == 64)
 @%p10 bra BB0_3;
 ```
 
-In this block, we have some add and remainder operations on each character. It does them 8 at a time (probably optimization) but the operation done on each is the same every time. There's one catch, and it's that if the thread index is higher than the index of the character it's checking, it skips it (i.e., thread 0 can only read one character, thread 1 can only read two characters, etc.)
+In this block, we have some add and remainder operations on each character. It does them 8 at a time -- probably optimization -- but the operation done on each is the same every time. There's one catch, and it's that if the thread index is higher than the index of the character it's checking, it skips it (i.e. thread 0 can only read one character, thread 1 can only read two characters, etc.).
 
 ```
 meme = 42
@@ -184,7 +184,7 @@ setp.ge.u32     %p11, %r3, %r1;     //p11 = (r3 == r1)
 @%p11 bra BB0_40; //jumps to exit
 ```
 
-Here, it sets `temp[threadIdx] = meme`. Then it does `bar.sync 0` which, according to the docs, waits for all threads to get to this point before continuing.
+Here, it sets `temp[threadIdx] = meme`. Then, it does `bar.sync 0` which, according to the docs, waits for all threads to get to this point before continuing.
 
 The rest is the same add and remainder stuff but backwards but with different constants (69 funny number) so I won't paste it here.
 
@@ -199,7 +199,7 @@ st.global.u8 [%rd9], %r171;    //rd7[r3] = r171
 
 It finally ends with setting `param0[threadId] = meme` for each thread.
 
-This code in python looks like this:
+This code in Python looks like this:
 
 ```python
 inp = [0x61,0x61]
@@ -229,13 +229,13 @@ for i in range(strLen):
 print(output)
 ```
 
-I tested against the screenshot I had from the discord call but it wasn't lining up. I was pretty sure everything was right, but I asked for another screenshot of "aa" so I could do a manual test.
+I tested against the screenshot I had from the Discord call but it wasn't lining up. I was pretty sure everything was right, but I asked for another screenshot of "aa" so I could do a manual test.
 
 ![smorgas-2](/uploads/2021-08-04/smorgas-2.png)
 
 Once I saw the length of the string was 3 bytes, I realized that it ended with a newline. Totally forgot fgets returned a newline. Once I added the newline to the input in the script, it matched.
 
-Then for the decoding part. We can easily brute force the modulo here to reverse it.
+Then for the decoding part, we can easily brute force the modulo here to reverse it.
 
 ```python
 def bruteMod(prevMeme, match, add):

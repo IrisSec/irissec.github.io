@@ -29,9 +29,9 @@ Go chase yourself, bull!
 Come back with a warrant
 ```
 
-The exe given is a ginormous 1mb file that appears to be vmprotect because of the large .vmp0 section. While searching around, I couldn't find anything to disassemble or decompile the vmprotect instructions, so I tried figuring out how it worked on my own. I spent a good thirty minutes before I gave up and resorted to debugging though.
+The exe given is a ginormous 1 MB file that appears to be vmprotect because of the large .vmp0 section. While searching around, I couldn't find anything to disassemble or decompile the vmprotect instructions, so I tried figuring out how it worked on my own. I spent a good thirty minutes before I gave up and resorted to debugging, though.
 
-## Quick look at code
+## Quick Look at the Code
 
 Here's the main function:
 
@@ -69,7 +69,7 @@ void main() {
 }
 ```
 
-The output prints really slow, so I'll do the same thing as last year and change the print function to sleep 0 milliseconds.
+The output prints really slowly, so I'll do the same thing as last year and change the print function to sleep for 0 milliseconds.
 
 ```c
 void slowPrint(char* param_1) {
@@ -97,15 +97,15 @@ As usual, I just search for the bytes in a hex editor and replace it by hand sin
 
 ## Debugging
 
-If we type something into the input, we can see that `FUN_140005820` is checking input. Not bad so far.
+If we type something into the input, we can see that `FUN_140005820` is checking the input. Not bad so far.
 
 ![speakeasy-1](/uploads/2021-08-03/speakeasy-1.png)
 
-And after running `FUN_140001630`, we see that the flag is checked as incorrect. Looks like we can ignore whatever magic is happening in `thunk_FUN_14012b29a`.
+After running `FUN_140001630`, we see that the flag is checked as incorrect. It looks like we can ignore whatever magic is happening in `thunk_FUN_14012b29a`.
 
 ![speakeasy-2](/uploads/2021-08-03/speakeasy-2.png)
 
-Here's the `checkInp` function.
+Here's the `checkInp` function:
 
 ```c
 void checkInp(char* inp) {
@@ -133,13 +133,13 @@ void checkInp(char* inp) {
 }
 ```
 
-The `thunk` functions all seem to be calls to vmprotect functions? So we probably don't want to get into those. One thing really nice about this is that it seems to read each character of the input individually (for 40 bytes?) and do two operations on it (`thunk_FUN_140028270` and `thunk_FUN_1400262c9`). 
+The `thunk` functions all seem to be calls to vmprotect functions, so we probably don't want to get into those. One thing that's really nice about this is that it seems to read each character of the input individually for 40 bytes (?) and do two operations on it: `thunk_FUN_140028270`, and `thunk_FUN_1400262c9`. 
 
-After those two first functions, the input becomes encrypted into this:
+After those two first functions, the input becomes encrypted to this:
 
 ![speakeasy-3](/uploads/2021-08-03/speakeasy-3.png)
 
-But what are we trying to match with? We can set a breakpoint on the encrypted input to find out.
+What are we trying to match with? We can set a breakpoint on the encrypted input to find out.
 
 ![speakeasy-4](/uploads/2021-08-03/speakeasy-4.png)
 
@@ -147,17 +147,17 @@ Looks like it's just comparing with some other bytes and the 8th byte is differe
 
 ![speakeasy-5](/uploads/2021-08-03/speakeasy-5.png)
 
-Sure enough, it's reading from the dos header. So we can guess that the twice encrypted input is compared against these bytes.
+Sure enough, it's reading from the DOS header, so we can guess that the twice encrypted input is compared against these bytes.
 
-## Omega dumb solution to this challenge
+## Omega Dumb Solution to this Challenge
 
-I was solving this challenge at 2am and my brain was not at high capacity, so I took a rather strange approach to this problem. I wanted to just brute force input and compare the output against the `3D 44` bit from the dos header. Easy enough, gdb python has us covered (ida freeware does not have python built in).
+I was solving this challenge at 2 AM and my brain was not at high capacity, so I took a rather strange approach to this problem: I wanted to just brute force input and compare the output against the `3D 44` bit from the DOS header. Easy enough -- GDB Python has us covered; IDA freeware does not have Python built in.
 
-There's a few issues I ran into.
+There were a few issues I ran into.
 
-One is that I don't know how to use gdb without symbols, and for whatever reason, trying to set a breakpoint at an address and running gdb relocates the code but doesn't relocate the breakpoint. So I had to turn off aslr in windows ([disable aslr for easier malware debugging](https://oalabs.openanalysis.net/2019/06/12/disable-aslr-for-easier-malware-debugging/) thanks seraphin) so I could set breakpoints on actual addresses.
+First is that I didn't know how to use GDB without symbols, and for whatever reason, trying to set a breakpoint at an address and running GDB relocates the code but doesn't relocate the breakpoint; I had to turn off ASLR in Windows ([disable ASLR for easier malware debugging](https://oalabs.openanalysis.net/2019/06/12/disable-aslr-for-easier-malware-debugging/) -- thanks, Seraphin) so that I could set breakpoints on actual addresses.
 
-Second is that for whatever reason, `run <<< somestring` (run with stdin) does not work on windows. I reused a gdb python script from a linux chall that worked great, but for whatever reason it doesn't work in windows. That's sort of a big deal because there's no good way to script input into the program. If I was on linux, I could use pwntools and give the process stdin that way. Most likely there is some other kind of windows program that can do what pwntools does, but I decided to try and generate a bunch of gdb lines to copy and paste into the terminal.
+Second is that for whatever reason, `run <<< somestring` (run with STDIN) does not work on Windows. I reused a GDB Python script from a Linux challenge that worked well, but for whatever reason, it didn't work on Windows. That was sort of a big deal because there was no good way to script input into the program. If I was on Linux, I could use pwntools and give the process STDIN that way. There was most likely some other kind of Windows program that can do what pwntools does, but I decided to try and generate a bunch of GDB lines to copy and paste into the terminal.
 
 ```python
 genstr = list("uiuctf{aaaaaaaaaaaaaaaaaaaaaaaaaa}")
@@ -173,15 +173,11 @@ for i in range(7, 34):
 
 ```
 
-The issue with this is that the gdb script can't tell if the input was correct or not, so I just have to go into the gdbout.txt log later and piece it together manually.
-
-Not only that, but for whatever reason cmd and windows terminal both mess up when you try to paste big clipboards.
+The issue with this was that the GDB script can't tell if the input was correct or not, so I just had to later go into the gdbout.txt log and piece it together manually. Not only that, but for whatever reason, CMD and Windows terminal both mess up when you try to paste big clipboards.
 
 ![speakeasy-6](/uploads/2021-08-03/speakeasy-6.png)
 
-So I grabbed a random ahk script from the internet to paste clipboard lines with a delay.
-
-Once all of that was done, I could finally run the script. It simply checks for the return value from `thunk_FUN_1400262c9` and compares it with the corr array values. If it's right, it says "is correct!" and I can ctrl+f for it in the output.
+I grabbed a random AHK script from the internet to paste clipboard lines with a delay. Once all of that was done, I could finally run the script. It simply checks for the return value from `thunk_FUN_1400262c9` and compares it with the corr array values. If it was right, it would say, "is correct!" and I can CTRL+F for it in the output.
 
 ```python
 import gdb
@@ -308,11 +304,11 @@ uiuctf{aaaaaaaaaaaaaaaaaaaaaaaaaa}
 32 is correct!
 ```
 
-Bad idea to use `a` , but we got the flag anyway: `uiuctf{D0nt_b3_@_W3T_bl4nK3t_6n7a}`!
+It was a bad idea to use `a` , but we got the flag anyway: `uiuctf{D0nt_b3_@_W3T_bl4nK3t_6n7a}`!
 
-## Slightly better solution
+## Slightly Better Solution
 
-Instead of brute forcing ever single character and using weird hacks like running ahk to paste the clipboard into a cmd window, we can run the function on multiple inputs to see if it's a simple xor. Gdb wasn't correctly calling the function, but IDA was able to do it fine.
+Instead of brute forcing every single character and using weird hacks like running AHK to paste the clipboard into a CMD window, we can run the function on multiple inputs to see if it's a simple XOR. GDB wasn't correctly calling the function, but IDA was able to do it just fine.
 
 ``` 
 thunk_FUN_140028270(0, alphabetChar) //tested w/ abcdef
@@ -325,7 +321,7 @@ thunk_FUN_140028270(3, alphabetChar)
 198,197,196,195,194,193
 ```
 
-Wow, it really does just look like a simple xor. If we xor 'a' with 36, 82, 20, and 198, we get `45 33 75 A7`. And surprise, we can find these bytes and more in the executable.
+Wow, it really does just look like a simple XOR. If we XOR 'a' with 36, 82, 20, and 198, then we get `45 33 75 A7`; and surprise, we can find these bytes and more in the executable.
 
 ![speakeasy-7](/uploads/2021-08-03/speakeasy-7.png)
 
@@ -338,7 +334,7 @@ thunk_FUN_1400262c9(1, alphabetChar) //abcdef
 127,124,125,122,123,120
 ```
 
-If we xor 'a' with 108 and 127 we get `0D 1E ...` which sadly doesn't exist in the file. There must be some shenanigans going on here, so let's set breakpoints on all of the strings around the one we found in `thunk_FUN_140028270`.
+If we XOR 'a' with 108 and 127, then we get `0D 1E ...`, which sadly doesn't exist in the file. There must be some shenanigans going on here, so let's set breakpoints on all of the strings around the one we found in `thunk_FUN_140028270`.
 
 ![speakeasy-8](/uploads/2021-08-03/speakeasy-8.png)
 
@@ -374,11 +370,11 @@ for i in range(len(match)):
 print(res)
 ```
 
-If the vm code was any more complicated, this probably wouldn't have worked.
+If the vm code was any more complicated, then this probably wouldn't have worked.
 
-## Intended solution
+## Intended Solution
 
-Despite my googling efforts, I did not find any tools to make the vm code readable. However, it was pointed out at the end that the intended solution _is_ to use something: [NoVmp](https://github.com/can1357/NoVmp). After running it on the executable, it dumps some vtil files which can be opened in [VTIL-Utils](https://github.com/vtil-project/VTIL-Utils).
+Despite my Googling efforts, I did not find any tools to make the VM code readable. However, it was pointed out at the end that the intended solution _is_ to use something: [NoVmp](https://github.com/can1357/NoVmp). After running it on the executable, it dumps some vtil files which can be opened in [VTIL-Utils](https://github.com/vtil-project/VTIL-Utils).
 
 ```assembly
 //thunk_FUN_140028270
@@ -417,7 +413,7 @@ Despite my googling efforts, I did not find any tools to make the vm code readab
  | | 0010: [ PSEUDO ]     +0x8     vexitq   t144
 ```
 
-From here we can see the very obvious xor with values from 0x14378 and 0x143c8.
+From here, we can see the very obvious XOR with values from 0x14378 and 0x143c8.
 
 > ```
 > The year is 1923.
