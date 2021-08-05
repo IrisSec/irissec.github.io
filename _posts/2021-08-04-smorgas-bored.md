@@ -8,7 +8,7 @@
 >
 > Author: Vanilla
 >
-> Files: [FlagChecker.zsc](/uploads/2021-08-04/FlagChecker.zsc)
+> Files: [smorga.exe](/uploads/2021-08-04/smorga.exe) [cudart64_102.dll](/uploads/2021-08-04/cudart64_102.dll)
 
 I tried running this challenge at the beginning of the ctf, but it turns out it doesn't run unless you have an Nvidia gpu.
 
