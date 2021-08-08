@@ -29,7 +29,7 @@ Go chase yourself, bull!
 Come back with a warrant
 ```
 
-The exe given is a ginormous 1 MB file that appears to be vmprotect because of the large .vmp0 section. While searching around, I couldn't find anything to disassemble or decompile the vmprotect instructions, so I tried figuring out how it worked on my own. I spent a good thirty minutes before I gave up and resorted to debugging, though.
+The exe given is a ginormous 1 MB file that appears to be VmProtect because of the large .vmp0 section. While searching around, I couldn't find anything to disassemble or decompile the VmProtect instructions, so I tried figuring out how it worked on my own. I spent a good thirty minutes before I gave up and resorted to debugging, though.
 
 ## Quick Look at the Code
 
@@ -133,7 +133,7 @@ void checkInp(char* inp) {
 }
 ```
 
-The `thunk` functions all seem to be calls to vmprotect functions, so we probably don't want to get into those. One thing that's really nice about this is that it seems to read each character of the input individually for 40 bytes (?) and do two operations on it: `thunk_FUN_140028270`, and `thunk_FUN_1400262c9`. 
+The `thunk` functions all seem to be calls to VmProtect functions, so we probably don't want to get into those. One thing that's really nice about this is that it seems to read each character of the input individually for 40 bytes (?) and do two operations on it: `thunk_FUN_140028270`, and `thunk_FUN_1400262c9`. 
 
 After those two first functions, the input becomes encrypted to this:
 
@@ -151,7 +151,7 @@ Sure enough, it's reading from the DOS header, so we can guess that the twice en
 
 ## Omega Dumb Solution to this Challenge
 
-I was solving this challenge at 2 AM and my brain was not at high capacity, so I took a rather strange approach to this problem: I wanted to just brute force input and compare the output against the `3D 44` bit from the DOS header. Easy enough -- GDB Python has us covered; IDA freeware does not have Python built in.
+I was solving this challenge at 2 AM and my brain was not at high capacity, so I took a rather strange approach to this problem: brute forcing input and comparing output against the `3D 44` bit from the DOS header. Easy enough -- GDB Python has us covered; IDA freeware does not have Python built in.
 
 There were a few issues I ran into.
 
