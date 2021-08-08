@@ -885,7 +885,7 @@ It looks like Red is in contact with Blue, and Blue sent Red a note encrypted wi
 ./mobile/Library/Notes
 ```
 
-Great, more databases! We should be familiar with the process by now, but there's an added catch: Blue mentioned that the note is encrypted. If we try accessing the database as it currently is, then it's pretty useless to us. We need some kind of parser, such as [apple_cloud_notes_parser](https://github.com/threeplanetssoftware/apple_cloud_notes_parser), in order to decrypt the note using the `notes.sqlite` file:
+Great, more databases! We should be familiar with the process by now, but there's an added catch: Blue mentioned that the note is encrypted. If we try accessing the database as it currently is, then it's pretty useless to us. We need some kind of parser, such as [apple_cloud_notes_parser](https://github.com/threeplanetssoftware/apple_cloud_notes_parser), in order to decrypt the note using the `NoteStore.sqlite` file:
 
 ```sh
 [skat@anubis:~/dl/apple_cloud_notes_parser] $ echo "su5Syb@k4" > password.txt
