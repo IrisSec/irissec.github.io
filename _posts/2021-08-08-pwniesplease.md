@@ -1,6 +1,6 @@
 ---
 title: UIUCTF 2021 - pwnies please
-author: sea
+author: sera
 categories: misc
 layout: post
 ---
