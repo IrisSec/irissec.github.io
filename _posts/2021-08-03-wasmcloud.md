@@ -8,7 +8,9 @@ layout: post
 > wasm... as a service!
 >
 > http://wasmcloud.chal.uiuc.tf
+>
 > HINT: They say to focus on the process, not the outcome
+>
 > author: kuilin
 > 
 > [handout.tar.gz](https://uiuc.tf/files/8120a81b776978e5307bf33845e0bcb8/handout.tar.gz)
