@@ -3,6 +3,7 @@ title: UIUCTF 2021 - pwnies please
 author: sera
 categories: other
 layout: post
+alias: [/articles/categories/misc/2021-08-08/pwniesplease]
 ---
 
 # pwnies\_please (Misc 390)
