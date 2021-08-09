@@ -517,7 +517,7 @@ Although this was just a CTF challenge, the entire process very closely resemble
 
 > Wait... there are TWO impostors?! Red must have been in contact with the other impostor. See if you can find out what they are plotting.
 
-Files: [`tablet.tar.gz`](/uploads/2021-08-07/tablet.tar.gz)
+Files: [`tablet.tar.gz`](https://shawnd.xyz/blog/uploads/2021-08-05/tablet.tar.gz)
 
 Checksum (SHA-1):
 
