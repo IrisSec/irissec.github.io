@@ -5,8 +5,7 @@ categories: forensics
 layout: post
 ---
 
-<!-- This won't be published on my personal website until Aug 12. I'll add that link later. -->
-*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2021-uiuctf.md).*
+*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2021-uiuctf.md) and [personal website](https://shawnd.xyz/blog/2021-08-12/Diffing-Images-and-Using-Columnar-LSB-to-Retrieve-a-Message).*
 
 This is a writeup for another "forensics" challenge that I completed at UIUCTF 2021 where I took a rather unconventional and possibly even unintended approach to the challenge in order to arrive at a solution. I put "forensics" in quotes because I personally don't really believe steganography to fall under the category of digital forensics, albeit I understand why others may make that association. This challenge involves performing columnar LSB steganography on an image, and I took the additional step of comparing it with a variant image in order to more precisely find a starting point.
 
