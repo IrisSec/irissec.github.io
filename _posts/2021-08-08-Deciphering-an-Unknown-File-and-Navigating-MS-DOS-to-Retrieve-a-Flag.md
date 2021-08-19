@@ -5,8 +5,7 @@ categories: forensics
 layout: post
 ---
 
-<!-- This won't be published on my personal website until Aug 19. I'll add that link later. -->
-*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2021-uiuctf.md).*
+*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2021-uiuctf.md) and [personal website](https://shawnd.xyz/blog/2021-08-19/Deciphering-an-Unknown-File-and-Navigating-MS-DOS-to-Retrieve-a-Flag).*
 
 This is a writeup for a great forensics challenge that I did at UIUCTF 2021 where I found yet another reason to despise Microsoft -- something I openly welcome! This challenge involves an unknown file format, navigating MS-DOS, uncovering hints communicated through IRC logs, and finally performing the necessary actions to retrieve a flag by recovering a deleted file.
 
