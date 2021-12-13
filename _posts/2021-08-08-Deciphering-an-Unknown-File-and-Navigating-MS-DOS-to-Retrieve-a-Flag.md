@@ -47,7 +47,7 @@ Stating the obvious here: the file is nearly chock-full of "SUPERHOT." Confused 
 "SUPERHOT" always being aligned was vital to making the XOR work since "SUPERHOT" XOR "SUPERHOT" would nullify the bytes, and any misalignment could cause catastrophic, snowballing failure down the line. zkldi was able to verify that all "SUPERHOT" started at some offset satisfying i = (0 + 8n) and ended at some offset satisfying i = (7 + 8n), where n begins at 0 and extends for the length of the file. With this, I spun up some quick Python and recovered the original file:
 
 ```python
-i#!/usr/bin/env python3
+#!/usr/bin/env python3
 
 KEY = b"SUPERHOT"
 
