@@ -477,7 +477,7 @@ Fetching /home/red/.bash_history to .bash_history
 mv /srv/exfiltrated "/srv/..."
 ```
 
-It looks like the file `/srv/exfiltrated` was renamed to `/src/...`. Let's have a look at that file. We can again get the file using `get`:
+It looks like the file `/srv/exfiltrated` was renamed to `/srv/...`. Let's have a look at that file. We can again get the file using `get`:
 
 ```sh
 sftp> cd /srv
