@@ -30,7 +30,7 @@ Applicants **without** an internal sponsor go through a much more rigorous and s
 1. The applicant must send a resume\* and cover letter which will be reviewed by the administrative board.
 2. A challenge will be authored for the applicant in the category of their choosing.
 3. The challenge will be administered to the applicant at the start of a 48-hour timespan of their choosing.
-4. If the applicant can solve the challenge before their 48 hours are up, then they may proceed. Otherwise, will be immediately disqualified.
+4. If the applicant can solve the challenge before their 48 hours are up, then they may proceed. Otherwise, they will be immediately disqualified.
 5. The applicant will go through an interview/meet-and-greet with the administrative board to get oriented and get to know more about IrisSec.
 6. The applicant will be invited to the IrisSec Discord Communications Server and officially be given membership.
 
