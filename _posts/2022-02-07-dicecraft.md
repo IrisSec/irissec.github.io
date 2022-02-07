@@ -29,13 +29,13 @@ This challenge is a Minecraft clone with computers. Loading up the chal.dat worl
 
 ![image-20220206191214917](/uploads/2022-02-07/image-20220206191214917.png)
 
-The red spinning computer on the left seems to send a signal out on a timer. The computer on the right sends a signal when right clicked. The redstone in this game is a bit different from redstone in minecraft in that it doesn't power the entire wire at once, it instead shoots off a signal to its destination.
+The red spinning computer on the left seems to send a signal out on a timer. The orange square computer on the right sends a signal when right clicked. The redstone in this game is a bit different from redstone in Minecraft in that it doesn't power the entire wire at once, it instead shoots off a signal to its destination.
 
 Outside the starting room is a big contraption with a lot of "computers".
 
 ![image-20220206235641803](/uploads/2022-02-07/image-20220206235641803.png)
 
-We can right click on these computers on the bottom so this is probably where we put the flag.
+We can right click on these computers on the bottom to cycle them through hex characters (0-f) so this is probably where we put the flag.
 
 There's also an orange button on the very left which seems to "activate" the circuit.
 
@@ -45,15 +45,15 @@ Here's what it looks like from a birds-eye view.
 
 ![image-20220206215358425](/uploads/2022-02-07/image-20220206215358425.png)
 
-Here's the mapping of each block:
-
-![image-20220206220221475](/uploads/2022-02-07/image-20220206220221475.png)
-
-We know the orange block is a button, the red block is a timer, and the letter block just cycles through "DICEGANG". 1-4 are pretty obvious.
+We know the orange block is a button, the red block is a timer, the green block cycles through hex characters, and the letter block just cycles through "DICEGANG". 1-4 are pretty obvious.
 
 I tried playing around with the blocks a little but it wasn't exactly clear how many of the blocks worked. So before I get into how each block works, I want to talk about how to get the names of these.
 
 ## Block names
+
+Here's the key mapping of each block:
+
+![image-20220206220221475](/uploads/2022-02-07/image-20220206220221475.png)
 
 If you open the game binary in Ghidra (IDA does not show this), you'll find the vtable listings. Here are the computers it lists:
 
@@ -80,7 +80,7 @@ In doing this, we also find out that the second function appears to be an update
 
 ![image-20220206223047005](/uploads/2022-02-07/image-20220206223047005.png)
 
-From there, I set a breakpoint on all of these functions for a few blocks to see if I could figure out what they all did.
+Just like I did with the update function, I set a breakpoint on the other functions for a few blocks to see if I could figure out what they all did.
 
 ## Understanding the computer functions
 
@@ -90,10 +90,10 @@ fun1(): called on a "tick" (i.e. all the time).
 fun2(side, value): called whenever a signal goes into it.
 fun3(): called on some blocks to return a value. the spinner returns its spin direction for example.
 fun4(val): empty on all except terminal. changing the input value changes its initial starting number.
-fun5(dir, value?): called when a signal comes out of the computer.
+fun5(dir, value): called when a signal comes out of the computer.
 ```
 
-Computers also do different things depending on the direction the inputs. We can set a breakpoint on function 2 (signal in) and make signals from each side of the block to figure out what numbers mean what sides.
+Computers also do different things depending on the direction the inputs. We can set a breakpoint on fun2 (signal in) and make signals from each side of the block to figure out what numbers mean what sides.
 
 ```
 front: 0
@@ -132,11 +132,19 @@ This computer is a little weird. It takes two values, one from the front and the
 
 ```c
 this->field_0xe = 1;
-//[7, 9, 5, 6, 14, 10, 12, 8, 1, 2, 13, 15, 4, 11, 0, 3]
 uVar1 = thunk_FUN_00421d20(this->field4_0x4, this->field5_0x8);
 this->field_0x10 = uVar1;
 this->field6_0xc = false;
 this->field_0xd = 0;
+```
+
+ Ghidra does not correctly decompile FUN_421d20, so here's some psuedo code:
+
+```c
+int FUN_421d20(int a, int b) {
+    int table[16] = {7, 9, 5, 6, 14, 10, 12, 8, 1, 2, 13, 15, 4, 11, 0, 3};
+    return table[((a & 0xf) + (b & 0xf)) % 16];
+}
 ```
 
 ![image-20220206232516676](/uploads/2022-02-07/image-20220206232516676.png) **Shifter Computer**
@@ -162,8 +170,8 @@ undefined8 __thiscall AutoClass::BumperComputerCtor(undefined4 *param_1) {
   undefined8 uVar1;
   thunk_FUN_00418c90((undefined4 *)this);
   *(undefined ***)this = BumperComputer::vftable;
-  this->field4_0x4 = 0xd1c40677;
-  this->field6_0xc = false;
+  this->field_0x4 = 0xd1c40677;
+  this->field_0xc = false;
   this->field_0x10 = 0;
   uVar1 = __RTC_CheckEsp(this,this);
   return uVar1;
@@ -249,9 +257,11 @@ Here's the map again with arrows:
 
 It's a little bit easier to understand what's going on now. When you click orange button ![image-20220206235944352](/uploads/2022-02-07/image-20220206235944352.png), it powers these first 16 terminal computers ![image-20220206235938240](/uploads/2022-02-07/image-20220206235938240.png). The mut computer ![image-20220206235926776](/uploads/2022-02-07/image-20220206235926776.png) adds the values of pairs of terminal computers, one which was already preset with the world, and the other which is input from what is probably the flag. After that, it's fed into a shifter computer ![image-20220207000002329](/uploads/2022-02-07/image-20220207000002329.png) which combines all eight signals into one, and then it goes to the bumper computers ![image-20220207000316962](/uploads/2022-02-07/image-20220207000316962.png).
 
-If we put in anything else for the first eight computers, the signal stops at the bumper computers somewhere along the path. But if they're set to 64696365 (dice), it follows the path all the way to the end and hits the signal computer to signal the next signal from the next eight terminals.
+After it goes through the bumper computers to the end, it hits the signal computer which signals two things. One, it signals the lock computer to unlock, bringing the next signal (from the next shifter computer) to go through the bumper comptuer maze to test the next eight hex characters. The second is to unlock the slot computer on the very left of the map. The slot computers act like a counter, as more parts of the flag are verified, the slot computers get closer and closer to activating the flag computer.
 
-So the goal is clear, figure out what eight byte value allows the bumper computers to carry the signal all the way through. That's only the output from the mut computer, so we also need to figure out what value needs to go into the mut computer to get the value we want to come out.
+We can test the machine by putting a value we know is correct into the first computers: "dice" (of "dice{XXX}") which is 64696365 in hex. If we put in anything else for the first eight computers, the signal stops at the bumper computers somewhere along the path. But if they're set to 64696365, it follows the path all the way to the end and hits the signal computer to signal the next signal.
+
+So the goal is clear, figure out what value allows the bumper computers to carry the signal all the way through. That's only the output from the mut computer, so we also need to figure out what value needs to go into the mut computer to get the value we want to come out.
 
 As usual, it's z3 time, and using it was surprisingly simple. All I had to do was create a class to "simulate" what happens to the bumper given an input. Once z3 found the result, I could run through it again to get the "seeds" (the one that starts as 0xd1c40677) and continue on with the next group of characters.
 
