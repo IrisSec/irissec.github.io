@@ -84,19 +84,23 @@ From there, I set a breakpoint on all of these functions for a few blocks to see
 
 ## Understanding the computer functions
 
-**fun0():** called when right clicked.
-**fun1():** called on a "tick" (i.e. all the time).
-**fun2(side, value):** called whenever a signal goes into it.
-**fun3():** called on some blocks to return a value. the spinner returns its spin direction for example.
-**fun4(val):** empty on all except terminal. changing the input value changes its initial starting number.
-**fun5(dir, value?):** called when a signal comes out of the computer.
+```
+fun0(): called when right clicked.
+fun1(): called on a "tick" (i.e. all the time).
+fun2(side, value): called whenever a signal goes into it.
+fun3(): called on some blocks to return a value. the spinner returns its spin direction for example.
+fun4(val): empty on all except terminal. changing the input value changes its initial starting number.
+fun5(dir, value?): called when a signal comes out of the computer.
+```
 
 Computers also do different things depending on the direction the inputs. We can set a breakpoint on function 2 (signal in) and make signals from each side of the block to figure out what numbers mean what sides.
 
-**front:** 0
-**back:** 1
-**left:** 2
-**right:** 3
+```
+front: 0
+back: 1
+left: 2
+right: 3
+```
 
 With that out of the way we can look at the code for each computer.
 
@@ -243,7 +247,7 @@ Here's the map again with arrows:
 
 ![image-20220206235450934](/uploads/2022-02-07/image-20220206235450934.png)
 
-It's a little bit easier to understand what's going on now. When you click orange button ![image-20220206235944352](/uploads/2022-02-07/image-20220206235944352.png), it powers these first 16 terminal computers ![image-20220206235938240](/uploads/2022-02-07/image-20220206235938240.png). The mut computer ![image-20220206235926776](/uploads/2022-02-07/image-20220206235926776.png)adds the values of pairs of terminal computers, one which was already preset with the world, and the other which is input from what is probably the flag. After that, it's fed into a shifter computer ![image-20220207000002329](/uploads/2022-02-07/image-20220207000002329.png) which combines all eight signals into one, and then it goes to the bumper computers ![image-20220207000316962](/uploads/2022-02-07/image-20220207000316962.png).
+It's a little bit easier to understand what's going on now. When you click orange button ![image-20220206235944352](/uploads/2022-02-07/image-20220206235944352.png), it powers these first 16 terminal computers ![image-20220206235938240](/uploads/2022-02-07/image-20220206235938240.png). The mut computer ![image-20220206235926776](/uploads/2022-02-07/image-20220206235926776.png) adds the values of pairs of terminal computers, one which was already preset with the world, and the other which is input from what is probably the flag. After that, it's fed into a shifter computer ![image-20220207000002329](/uploads/2022-02-07/image-20220207000002329.png) which combines all eight signals into one, and then it goes to the bumper computers ![image-20220207000316962](/uploads/2022-02-07/image-20220207000316962.png).
 
 If we put in anything else for the first eight computers, the signal stops at the bumper computers somewhere along the path. But if they're set to 64696365 (dice), it follows the path all the way to the end and hits the signal computer to signal the next signal from the next eight terminals.
 
