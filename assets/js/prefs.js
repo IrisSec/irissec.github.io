@@ -1,5 +1,11 @@
 var prefsDiv = null;
 
+/* Firefox update on Linux turned the flicker from a quirky feature to a source
+   of extreme lag. The flicker effect is now disabled by default. */
+if (!localStorage.getItem("textflicker")) {
+	localStorage.setItem("textflicker", 0);
+}
+
 function settings() {
 	if (prefsDiv == null) {
 		prefsDiv = document.createElement("div");
