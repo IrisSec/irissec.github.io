@@ -11,6 +11,12 @@ IrisSec promotes a casual, anti-competitive, and fun-first environment for hacke
 
 ## Highlights
 
+### \> HeroCTF 2022
+8/631
+
+### \> UMDCTF 2022
+5/552
+
 ### \> X-MAS CTF 2021
 2/982
 
