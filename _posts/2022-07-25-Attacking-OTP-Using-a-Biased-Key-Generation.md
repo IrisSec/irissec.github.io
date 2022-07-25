@@ -212,7 +212,7 @@ When the digits that can create a "1" bit in the key are 1, 2, 3, and 4, the sum
 
 We've discovered a violation of rule 2 of unbreakable OTP, meaning that this implementation of OTP can be cracked:
 
-> 2. The key must be random (uniformly distributed in the set of all possible keys and independent of the plaintext), entirely sampled from a non-algorithmic, chaotic source such as a hardware random number generator.
+> The key must be random (uniformly distributed in the set of all possible keys and independent of the plaintext), entirely sampled from a non-algorithmic, chaotic source such as a hardware random number generator.
 
 As the key is not truly randomly generated, the ciphertexts, therefore, are not either. We can simply gather a large number of flag ciphertext samples from the server, compute the probabilities of each individual bit to form a single binary string, and then XOR it with 1s to retrieve the flag. This is easily automated with pwntools in Python:
 
