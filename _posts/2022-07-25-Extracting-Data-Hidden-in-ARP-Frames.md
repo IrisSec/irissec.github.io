@@ -52,22 +52,22 @@ from scapy.all import *
 
 def main():
 
-	frames = rdpcap("./tarp.pcapng")
-	arp = [f for f in frames if ARP in f and
-		f.src == "f6:6b:50:99:aa:10" and f.dst == "00:00:00:00:00:00"]
+    frames = rdpcap("./tarp.pcapng")
+    arp = [f for f in frames if ARP in f and
+        f.src == "f6:6b:50:99:aa:10" and f.dst == "00:00:00:00:00:00"]
 
-	data = b""
+    data = b""
 
-	for f in arp:
-		data += bytes(f.payload)[-4:]
+    for f in arp:
+        data += bytes(f.payload)[-4:]
 
-	with open("./output.bin", "wb") as f:
-		f.write(data)
+    with open("./output.bin", "wb") as f:
+        f.write(data)
 
-	print("Data written to ./output.bin")
+    print("Data written to ./output.bin")
 
 if __name__ == "__main__":
-	main()
+    main()
 ```
 
 Running this script and then carving the resultant file, sure enough, finds a PNG:

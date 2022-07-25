@@ -67,41 +67,41 @@ import random
 import math
 
 def secureRand(bits, seed):
-  jumbler = []
-  jumbler.extend([2**n for n in range(300)])
-  jumbler.extend([3**n for n in range(300)])
-  jumbler.extend([4**n for n in range(300)])
-  jumbler.extend([5**n for n in range(300)])
-  jumbler.extend([6**n for n in range(300)])
-  jumbler.extend([7**n for n in range(300)])
-  jumbler.extend([8**n for n in range(300)])
-  jumbler.extend([9**n for n in range(300)])
-  out = ""
-  state = seed % len(jumbler)
-  for _ in range(bits):
-    if int(str(jumbler[state])[0]) < 5:
-      out += "1"
-    else:
-      out += "0"
-    state = int("".join([str(jumbler[random.randint(0, len(jumbler)-1)])[0] for n in range(len(str(len(jumbler)))-1)]))
-  return long_to_bytes(int(out, 2)).rjust(bits//8, b'\0')
+    jumbler = []
+    jumbler.extend([2**n for n in range(300)])
+    jumbler.extend([3**n for n in range(300)])
+    jumbler.extend([4**n for n in range(300)])
+    jumbler.extend([5**n for n in range(300)])
+    jumbler.extend([6**n for n in range(300)])
+    jumbler.extend([7**n for n in range(300)])
+    jumbler.extend([8**n for n in range(300)])
+    jumbler.extend([9**n for n in range(300)])
+    out = ""
+    state = seed % len(jumbler)
+    for _ in range(bits):
+        if int(str(jumbler[state])[0]) < 5:
+            out += "1"
+        else:
+            out += "0"
+        state = int("".join([str(jumbler[random.randint(0, len(jumbler)-1)])[0] for n in range(len(str(len(jumbler)))-1)]))
+    return long_to_bytes(int(out, 2)).rjust(bits//8, b'\0')
 
 def xor(var, key):
-  return bytes(a ^ b for a, b in zip(var, key))
+    return bytes(a ^ b for a, b in zip(var, key))
 
 def main():
-  print("Welcome to my one time pad as a service!")
-  flag = open("flag.txt", "rb").read()
-  seed = random.randint(0, 100000000)
-  while True:
-    inp = input("Enter plaintext: ").encode()
-    if inp == b"FLAG":
-      print("Encrypted flag:", xor(flag, secureRand(len(flag)*8, seed)).hex())
-    else:
-      print("Encrypted message:", xor(inp, secureRand(len(inp)*8, seed)).hex())
+    print("Welcome to my one time pad as a service!")
+    flag = open("flag.txt", "rb").read()
+    seed = random.randint(0, 100000000)
+    while True:
+        inp = input("Enter plaintext: ").encode()
+        if inp == b"FLAG":
+            print("Encrypted flag:", xor(flag, secureRand(len(flag)*8, seed)).hex())
+        else:
+            print("Encrypted message:", xor(inp, secureRand(len(inp)*8, seed)).hex())
 
 if __name__ == "__main__":
-  main()
+    main()
 ```
 
 This program reads the flag and then encrypts it, and then allows you to either get the encrypted flag or enter a plaintext and see its encrypted counterpart. While the seed stays constant throughout a running instance of the program, the keys continue to change seemingly randomly:
@@ -112,9 +112,9 @@ At first glance, it may not be apparent what the vulnerability is. One's eye may
 
 ```python
 if int(str(jumbler[state])[0]) < 5:
-  out += "1"
+    out += "1"
 else:
-  out += "0"
+    out += "0"
 ```
 
 If the first digit of a chosen number in the jumbler is less than 5, a "1" bit is appended to the key. Otherwise, a "0" bit is appended. This seems okay until you remember that numbers cannot start with 0, so while 4 possible digits can create a "1," 5 possible digits can create a "0." This will, however, not create a 44.4%/55.5% split in probability for reasons that will be explained in a moment. There may be a bias in key generation here, which we should explore more deeply.
@@ -130,50 +130,50 @@ import math
 
 def secureRand(bits, seed):
 
-	jumbler = []
-	jumbler.extend([2**n for n in range(300)])
-	jumbler.extend([3**n for n in range(300)])
-	jumbler.extend([4**n for n in range(300)])
-	jumbler.extend([5**n for n in range(300)])
-	jumbler.extend([6**n for n in range(300)])
-	jumbler.extend([7**n for n in range(300)])
-	jumbler.extend([8**n for n in range(300)])
-	jumbler.extend([9**n for n in range(300)])
+    jumbler = []
+    jumbler.extend([2**n for n in range(300)])
+    jumbler.extend([3**n for n in range(300)])
+    jumbler.extend([4**n for n in range(300)])
+    jumbler.extend([5**n for n in range(300)])
+    jumbler.extend([6**n for n in range(300)])
+    jumbler.extend([7**n for n in range(300)])
+    jumbler.extend([8**n for n in range(300)])
+    jumbler.extend([9**n for n in range(300)])
 
-	out = ""
-	state = seed % len(jumbler)
+    out = ""
+    state = seed % len(jumbler)
 
-	for _ in range(bits):
+    for _ in range(bits):
 
-		if int(str(jumbler[state])[0]) < 5:
-			out += "1"
-		else:
-			out += "0"
+        if int(str(jumbler[state])[0]) < 5:
+            out += "1"
+        else:
+            out += "0"
 
-		state = int("".join([str(jumbler[random.randint(0, len(jumbler)-1)])[0] for n in range(len(str(len(jumbler)))-1)]))
+        state = int("".join([str(jumbler[random.randint(0, len(jumbler)-1)])[0] for n in range(len(str(len(jumbler)))-1)]))
 
-	return out
+    return out
 
 def main():
 
-	# A random string in flag.txt will suffice.
-	flag = open("flag.txt", "rb").read()
-	seed = random.randint(0, 100000000)
+    # A random string in flag.txt will suffice.
+    flag = open("flag.txt", "rb").read()
+    seed = random.randint(0, 100000000)
 
-	print("Generating samples...")
-	samples = [secureRand(len(flag)*8, seed) for _ in range(10000)]
-	probOne = [0 for _ in range(len(samples[0]))]  # Probability of a bit in the key being a 1.
+    print("Generating samples...")
+    samples = [secureRand(len(flag)*8, seed) for _ in range(10000)]
+    probOne = [0 for _ in range(len(samples[0]))]  # Probability of a bit in the key being a 1.
 
-	print("Analyzing...")
-	for sample in samples:
-		for i, bit in enumerate(sample):
-			if bit == "1":  probOne[i] += 1
+    print("Analyzing...")
+    for sample in samples:
+        for i, bit in enumerate(sample):
+            if bit == "1":  probOne[i] += 1
 
-	for i, stat in enumerate(probOne):
-		print("Bit %d probability of being '1' is %.2f%%" % (i, stat/len(samples) * 100))
+    for i, stat in enumerate(probOne):
+        print("Bit %d probability of being '1' is %.2f%%" % (i, stat/len(samples) * 100))
 
 if __name__ == "__main__":
-	main()
+    main()
 ```
 
 ![](/uploads/2022-07-25/02/img01.png)
@@ -223,43 +223,43 @@ from pwn import *
 
 def main():
 
-	target = remote("otp.chal.imaginaryctf.org", 1337)
+    target = remote("otp.chal.imaginaryctf.org", 1337)
 
-	log.info("Gathering samples...")
-	samples = []
+    log.info("Gathering samples...")
+    samples = []
 
-	for i in range(100):
+    for i in range(100):
 
-		target.recvuntil(b"plaintext: ")
-		target.sendline(b"FLAG")
+        target.recvuntil(b"plaintext: ")
+        target.sendline(b"FLAG")
 
-		data = target.recvline().decode("utf-8").split()[-1]
-		log.info("Received sample: %s" % data)
+        data = target.recvline().decode("utf-8").split()[-1]
+        log.info("Received sample: %s" % data)
 
-		samples.append(bin(int(data, 16))[2:].zfill(len(data)*4))
+        samples.append(bin(int(data, 16))[2:].zfill(len(data)*4))
 
-	probOne = [0 for _ in range(len(samples[0]))]
+    probOne = [0 for _ in range(len(samples[0]))]
 
-	log.info("Analyzing...")
-	for sample in samples:
-		for i, bit in enumerate(sample):
-			if bit == "1":  probOne[i] += 1
+    log.info("Analyzing...")
+    for sample in samples:
+        for i, bit in enumerate(sample):
+            if bit == "1":  probOne[i] += 1
 
-	binary = ""
+    binary = ""
 
-	for stat in probOne:
-		if stat/len(samples) > 0.5:
-			binary += "1"
-		else:
-			binary += "0"
+    for stat in probOne:
+        if stat/len(samples) > 0.5:
+            binary += "1"
+        else:
+            binary += "0"
 
-	dataBytes = [int(binary[i:i+8], 2) for i in range(0, len(binary), 8)]
-	flag = "".join([chr(b ^ 0xFF) for b in dataBytes])
+    dataBytes = [int(binary[i:i+8], 2) for i in range(0, len(binary), 8)]
+    flag = "".join([chr(b ^ 0xFF) for b in dataBytes])
 
-	log.info("Flag: %s" % flag)
+    log.info("Flag: %s" % flag)
 
 if __name__ == "__main__":
-	main()
+    main()
 ```
 
 Upon running the script, we begin capturing samples:
