@@ -1,7 +1,7 @@
 ---
 title: SSH Tunneling to Bypass SFTP Jail and Leak a Database
 author: skat
-categories: misc
+categories: other
 layout: post
 ---
 
