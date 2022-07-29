@@ -5,7 +5,7 @@ categories: forensics
 layout: post
 ---
 
-*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-imaginaryctf.md).*
+*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-imaginaryctf.md) and [personal website](https://shawnd.xyz/blog/2022-07-28/Extracting-Data-Hidden-in-ARP-Frames).*
 
 This is one of my three writeups from ImaginaryCTF. This particular challenge deals with data being discreetly embedded in link layer (layer 2) ARP frames in a given pcapng file, and my solution involved extracting all relevant ARP frames with Python and reassembling the data.
 
