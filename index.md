@@ -3,7 +3,7 @@ title: IrisSec
 layout: index
 ---
 
-# IrisSec Computer Hacking Club
+# IrisSec
 
 <pre id="asciiart">
                                                                                                                         
