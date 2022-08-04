@@ -5,7 +5,7 @@ categories: crypto
 layout: post
 ---
 
-*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-imaginaryctf.md).*
+*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-imaginaryctf.md) and [personal website](https://shawnd.xyz/blog/2022-08-04/Attacking-OTP-Using-a-Biased-Key-Generation).*
 
 This is another one of my three writeups from this year's ImaginaryCTF. This particular challenge concerns attacking an OTP (one-time pad), a strong encryption technique in cryptography that is fundamentally uncrackable given proper implementation and adherence to a few simple rules dictating its key. My team's solution involved exploiting a bias in the key generation of a vulnerable OTP implementation to recover a flag.
 
