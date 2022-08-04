@@ -1,4 +1,9 @@
-# Pierated Art
+---
+title: UIUCTF 2022 - Pierated Art
+author: not_really
+categories: rev
+layout: post
+---
 
 > "Composition with Red, Yellow, and Blue by Piet Mondrian, with red graffiti all over it"
 >
