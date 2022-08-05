@@ -5,8 +5,7 @@ layout: default
 
 # Contact
 
-If you would like to contact the IrisSec Computer Hacking Club for any reason, please email the club board using the information provided.
+If you would like to contact IrisSec for any reason, please send an email using the following information:
 
-IrisSec Computer Hacking Club \\
-Club Executive Board \\
+IrisSec \\
 [irissec@pm.me](mailto:irissec@pm.me)
