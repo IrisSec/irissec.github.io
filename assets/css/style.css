@@ -172,6 +172,38 @@ a:hover {
 	text-decoration: none;
 }
 
+#memberlist {
+	list-style: none;
+	padding: 0;
+}
+
+.member-listing {
+	border: 2px solid green;
+	margin-top: -2px;
+	height: 96px;
+}
+
+.member-listing img {
+	float: left;
+	height: 96px;
+	width: 96px;
+}
+
+.member-links {
+	padding-top: 16px;
+	padding-right: 16px;
+	float: right;
+}
+
+.member-links img {
+	height: 32px;
+	width: 32px;
+}
+
+.member-links a:hover {
+	background-color: revert;
+}
+
 /* Syntax highlighter colors. */
 .highlight .hll { background-color: #222222 }
 .highlight  { background: #0c0c0c; color: #cccccc }
