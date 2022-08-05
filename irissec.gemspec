@@ -3,10 +3,10 @@
 Gem::Specification.new do |spec|
   spec.name          = "irissec"
   spec.version       = "0.1.0"
-  spec.authors       = ["Shawn Duong"]
-  spec.email         = ["shawnduong@protonmail.com"]
+  spec.authors       = ["IrisSec"]
+  spec.email         = ["irissec@pm.me"]
 
-  spec.summary       = "Theme for the IrisSec website."
+  spec.summary       = "IrisSec website."
   spec.homepage      = "http://irissec.xyz/"
   spec.license       = "MIT"
 
