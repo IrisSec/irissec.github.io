@@ -1,7 +1,7 @@
 ---
 title: UIUCTF 2022 - Pierated Art
 author: not_really
-categories: rev
+categories: re
 layout: post
 ---
 
