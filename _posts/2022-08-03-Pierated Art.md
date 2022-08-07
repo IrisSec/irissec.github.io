@@ -38,7 +38,7 @@ Zoomed into the top left:
 
 I'd seen an esoteric language that used colors like this, and a search brought me to Piet on Wikipedia. [Esolangs.org](https://esolangs.org/wiki/Piet) has more info. The TLDR:
 
-* A codel is the unit of measurement, and in our case, the same as one pixel. If we zoomed in the image 200%, it would be 2 pixels per codel.
+* A codel is the unit of measurement, and in our case, the same as one pixel. If we zoomed in the image 200%, the codel size would be 2 (2x2 block of pixels per codel).
 * The command executed by each pixel is based on the relative hue and lightness of the previous pixel.
 * The direction pointer is the pixel that is being executed and the direction to execute for the next one. Essentially, it starts in the top left corner and goes right until it hits a wall or rotates with the `pointer` command.
 * Black pixels make the direction pointer rotate clockwise. White pixels are skipped.
@@ -63,7 +63,7 @@ Pressing F5 prints `enter flag:` and asks for input. Pidet will complain there i
 
 After running the input, it prints a 0, probably for "the flag is incorrect". I tried following the pointer for a while, but the program doesn't automatically scroll to it which meant I had to keep scrolling over to find where the pointer was.
 
-At this point, I realized I could just simplify the image down to a much smaller one which would've worked in the other tools that were struggling to open the large file :man_facepalming::
+At this point, I realized I could just simplify the image down to a much smaller one which would've worked in the other tools that were struggling to open the large file 🤦:
 
 ![image-20220803213747249](/uploads/2022-08-03/image-20220803213747249.png)
 
