@@ -42,7 +42,7 @@ When you communicate on the Internet, the other end can only see your public (ex
 
 NAT typically goes something like so:
 
-![](/uploads/2022-08-11/NAT.gif)
+![](/uploads/2022-08-07/NAT.gif)
 
 **IPv6 obsoletes NAT.** In IPv6, all nodes have a **globally unique address** that can be used to communicate outside of their local network. These can be assigned manually, automatically with DHCPv6, or, as we will discuss, autonomously using a new mechanism known as SLAAC.
 
@@ -71,7 +71,7 @@ The entire process from joining a network to generating a link-local address and
 
 Note that the host can use the multicast address `ff02::1` for all IPv6 nodes or `ff02::2` for all IPv6 routers.
 
-![](/uploads/2022-08-11/SLAAC.gif)
+![](/uploads/2022-08-07/SLAAC.gif)
 
 Now that we understand IPv6 addresses and how they're made, we can finally start the challenge.
 
@@ -83,7 +83,7 @@ Now that we understand IPv6 addresses and how they're made, we can finally start
 >
 > `stty raw -echo isig; nc dads-rules.chal.uiuc.tf 1337`
 
-Files: [`handout.tar.zst`](/uploads/2022-08-11/handout.tar.zst){:target="_blank"}
+Files: [`handout.tar.zst`](/uploads/2022-08-07/handout.tar.zst){:target="_blank"}
 
 Checksum (SHA-1):
 
@@ -93,9 +93,9 @@ c9ca6e073e5aa984798185d6d6d5a4c39cde932f  handout.tar.zst
 
 Right off the bat, [RFC 4861](https://datatracker.ietf.org/doc/html/rfc4861){:target="_blank"} (IPv6 NDP) and [RFC 4862](https://datatracker.ietf.org/doc/html/rfc4862){:target="_blank"} (SLAAC) are referenced, both topics just discussed. The title of the challenge is a reference to DAD, another topic just discussed. Let's crack open the challenge and see what we have.
 
-![](/uploads/2022-08-11/00.png)
+![](/uploads/2022-08-07/00.png)
 
-![](/uploads/2022-08-11/01.png)
+![](/uploads/2022-08-07/01.png)
 
 A bunch of commands are run when we first start up the challenge. Let's dissect what they mean so we can understand the environment we're dropped in:
 
@@ -204,11 +204,11 @@ $ tcpdump -c 16 -w data.pcap && base64 data.pcap
 $ base64 -d data.64 > data.pcap && wireshark data.pcap
 ```
 
-![](/uploads/2022-08-11/02.png)
+![](/uploads/2022-08-07/02.png)
 
-![](/uploads/2022-08-11/03.png)
+![](/uploads/2022-08-07/03.png)
 
-![](/uploads/2022-08-11/04.png)
+![](/uploads/2022-08-07/04.png)
 
 ```
 uiuctf{wait_the_hop_limit_matters?!_4c1bda13}
@@ -224,7 +224,7 @@ This was unintended.
 >
 > `$ stty raw -echo isig; nc dads-rules-fixed.chal.uiuc.tf 1337`
 
-Files: [`handout_FIXED.tar.zst`](/uploads/2022-08-11/handout_FIXED.tar.zst){:target="_blank"}
+Files: [`handout_FIXED.tar.zst`](/uploads/2022-08-07/handout_FIXED.tar.zst){:target="_blank"}
 
 Checksum (SHA-1):
 
@@ -234,7 +234,7 @@ Checksum (SHA-1):
 
 The unintended solution has been fixed.
 
-![](/uploads/2022-08-11/05.png)
+![](/uploads/2022-08-07/05.png)
 
 As I was saying before, on the bridge namespace, rules are added to a **bridge** table called `filter` that only allow data to pass if one of three rules are satisfied:
 
@@ -378,7 +378,7 @@ $ base64 -d data.b64 > a.out.gz && gunzip a.out && chmod +x a.out && ./a.out
 $ tcpdump -c 4 -w data.pcap && base64 data.pcap
 ```
 
-![](/uploads/2022-08-11/06.png)
+![](/uploads/2022-08-07/06.png)
 
 ```
 uiuctf{wait_theres_a_bridge_family?!_f81a1c2c}
@@ -386,7 +386,7 @@ uiuctf{wait_theres_a_bridge_family?!_f81a1c2c}
 
 In a conversation with the author through modmail after I completed the challenge, I later learned that the machine had trafgen.
 
-![](/uploads/2022-08-11/07.png)
+![](/uploads/2022-08-07/07.png)
 
 Lovely challenge that forced me to finally start learning IPv6.
 
