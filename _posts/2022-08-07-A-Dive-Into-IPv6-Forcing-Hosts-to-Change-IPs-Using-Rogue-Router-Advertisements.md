@@ -5,7 +5,7 @@ categories: netsec
 layout: post
 ---
 
-*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-uiuctf.md).*
+*This writeup is also readable on my [GitHub repository](https://github.com/shawnduong/zero-to-hero-hacking/blob/master/writeups/closed/2022-uiuctf.md) and [personal website](https://shawnd.xyz/blog/2022-08-11/A-Dive-Into-IPv6-Forcing-Hosts-to-Change-IPs-Using-Rogue-Router-Advertisements).*
 
 I recently did a great challenge at UIUCTF 2022 that forced me to finally bite the bullet and learn IPv6. This particular challenge involved forcing hosts on a network to change their IP addresses by crafting and sending a rogue router advertisement. During the event, I also found an unintended solution that I'll be discussing, and I'll also be explaining some fundamental IPv6 concepts in-depth throughout this writeup so that you, too, can learn the basics of IPv6.
 
