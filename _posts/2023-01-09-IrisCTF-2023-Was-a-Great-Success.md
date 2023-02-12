@@ -5,7 +5,7 @@ categories: announcements
 layout: post
 ---
 
-IrisCTF 2023 has officially concluded. Thank you to everyone who came to our event this weekend! This was a monumental moment for IrisSec as it was our first time ever hosting a CTF. We had 1017 registered teams with a mean team size of 2.4. Our exit survey results were overwhelmingly positive with the significant majority of participants feeling that they had fun, learned a lot, and had positive experiences with our event infrastructure, challenges, and staff.
+IrisCTF 2023 has officially concluded. Thank you to everyone who came to our event this weekend! This was a monumental moment for IrisSec as it was our first time ever hosting a CTF. We had 1087 registered teams with a mean team size of 2.78. Our exit survey results were overwhelmingly positive with the significant majority of participants feeling that they had fun, learned a lot, and had positive experiences with our event infrastructure, challenges, and staff.
 
 Congratulations to the top 3 teams:
 1. "Social Engineering Experts"
