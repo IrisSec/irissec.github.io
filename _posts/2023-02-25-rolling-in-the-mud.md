@@ -9,11 +9,11 @@ layout: post
 
 These are the original symbols. I'm not too familar with cryptography, so I reverse image searched it.
 
-![](https://i.imgur.com/IX7o9QA.png)
+![cipher](uploads/2023-02-25/cipher.png)
 
 I found an image called the masonic or pigpen cipher.
 
-![](https://i.imgur.com/v3pO6tA.png)
+![MasonicCode](uploads/2023-02-25/MasonicCode.png)
 
 It was there we discovered the image was just rotated. Afterwards it was deciphered correctly.
 
