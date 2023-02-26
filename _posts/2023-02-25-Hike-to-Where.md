@@ -16,7 +16,7 @@ I changed methods by looking up UCLA's CS faculty directory. I found his profile
 
 ![CareyNachenberg](/uploads/2023-02-25/CareyNachenberg.png)
 
-I began looking up his name on social media platforms. I found a couple of pictures of him hiking on Facebook. Overtime I stumbled onto UCLA's peaksandprofessors.ucla [Instagram](https://https://www.instagram.com/peaksandprofessors.ucla/?hl=en).
+I began looking up his name on social media platforms. I found a couple of pictures of him hiking on Facebook. Overtime I stumbled onto UCLA's peaksandprofessors.ucla [Instagram](https://www.instagram.com/peaksandprofessors.ucla/?hl=en).
 
 I found this post with the location in the title and description. 
 
