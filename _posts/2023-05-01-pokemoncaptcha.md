@@ -3,6 +3,7 @@ layout: post
 title: UMDCTF 2023 - Pokeptcha
 description: javascript being javascript
 author: not_really
+categories: re
 ---
 
 > Team Rocket keeps taking down my website! I'm testing out this new type of captcha, but it doesn't seem to be working as expected. None of the choices are valid! Can you solve it for me?
