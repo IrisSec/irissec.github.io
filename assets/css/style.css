@@ -115,11 +115,18 @@ pre::-webkit-scrollbar-thumb {
 	background-color: var(--fg-color-secondary);
 }
 
-a {
+a, button {
 	color: var(--fg-color-bold);
 	display: inline-block;
 	text-decoration: none;
 	transition: 250ms linear;
+}
+
+button {
+	background-color: var(--bg-color-primary);
+	border-color: var(--fg-color-primary);
+	border-width: 3px;
+	border-style: solid;
 }
 
 a:visited {
@@ -127,7 +134,7 @@ a:visited {
 	text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover {
 	background-color: var(--fg-color-bold);
 	color: var(--bg-color-primary);
 	text-decoration: none;
@@ -202,6 +209,54 @@ a:hover {
 
 .member-links a:hover {
 	background-color: revert;
+}
+
+.code-block {
+  position: relative;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.code-block.expanded {
+  max-height: none;
+}
+
+.code-block pre {
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+  overflow: none;
+}
+
+.code-block.expanded pre {
+  overflow: auto;
+}
+
+.code-block .expand-button {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.code-block:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 255));
+  pointer-events: none;
+}
+
+.code-block.expanded:before {
+  display: none;
+}
+
+img {
+	position: relative;
+	z-index: 4;
 }
 
 /* Syntax highlighter colors. */
