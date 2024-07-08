@@ -10,7 +10,7 @@ categories: re
 > 
 > **By:** 32121
 > 
-> [timetravel.zip](...)
+> [timetravel.zip](/uploads/2024-07-06/timetravel.zip)
 
 Takes a flag argument, takes about 20 seconds to check, then prints `Bad`.
 
