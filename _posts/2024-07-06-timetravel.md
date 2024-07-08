@@ -657,7 +657,7 @@ inp 3 -------------------------X---->
 inp 4 ---X-------------X------------>
 ```
 
-So what's the modification? The code moves the pointer a certain amount forward/backward depending on if you add or subtract a character value. If you hit an X, the character is added to, otherwise nothing happens. As the author puts it, it's an arbitrary base system.
+So what's the modification? The code moves the pointer a certain amount forward/backward depending on if you add or subtract a character value. If you hit an X, the character is added to, otherwise nothing happens. As the author puts it, it's an arbitrary base system. In order to wrap around, whenever the tape pointer hits one of the `FE` bytes, the pointer wraps around to the other `FE` byte (in other words, `mod 256`).
 
 > It converts binary to a different base so for [48, 29, 31, 190, 175, 252, 211, 4] and a number 151,
 > 151 == 0b10010111 => 48 + 190 + 252 + 211 + 4 == 193 (mod 256)
