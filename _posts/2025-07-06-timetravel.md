@@ -132,7 +132,7 @@ for v in b:
 
 Unfortunately, that makes a 55k line file.
 
-![image-20240707001911119](/uploads/2023-05-01/image-20240707001911119.png)
+![image-20240707001911119](/uploads/2024-07-06/image-20240707001911119.png)
 
 ### looking at the flag checking code
 
@@ -254,7 +254,7 @@ Assuming the program actually starts (it very often does not), you can enter a v
 
 Looking at the dump for a single `a` character, the tape looks like this:
 
-![HxD_BmDxA54YFw](/uploads/2023-05-01/HxD_BmDxA54YFw.png)
+![HxD_BmDxA54YFw](/uploads/2024-07-06/HxD_BmDxA54YFw.png)
 
 If you change the `a` to anything else like a `b`, the `01` byte at the cursor in the screenshot moves to a different cell in a sporadic way. If you have the right character, in this case `u`, the `01` moves into the first cell, and `09` is incremented to `0a`. So the goal is to move all of these `01`s to the first cell somehow. Note that the value of one character and its `01` position does not affect other characters and their `01` positions.
 
@@ -331,7 +331,7 @@ exit(0)
 
 And then if we run the script (`python3 -u ttt_parent.py SILENT | tee ttchars.txt`) we'll get output like this:
 
-![image-20240707022958278](/uploads/2023-05-01/image-20240707022958278.png)
+![image-20240707022958278](/uploads/2024-07-06/image-20240707022958278.png)
 
 After about 25 minutes, we get these non-zero characters (including `uiuctf` but not `{}`):
 
@@ -635,7 +635,7 @@ timeline hit ) at: 2320 // final check
 
 Before anything happens, a bunch of `FE` markers are placed on the tape. These markers are used to move the tape pointer to certain parts of the program. This is because brainfuck doesn't have an instruction to tell _where_ the pointer is at, but it can easily check if the current tape is pointing to a 0. So the code often adds two to the current cell, checks if zero, subtracts two again to put the value back, and moves left or right if it wasn't zero.
 
-![image-20240707190317431](/uploads/2023-05-01/image-20240707190317431.png)
+![image-20240707190317431](/uploads/2024-07-06/image-20240707190317431.png)
 
 Notice how each region between the `FE` markers are 0x100 in size? That will be important later.
 
